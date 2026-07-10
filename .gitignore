@@ -111,10 +111,6 @@ coverage.xml
 # Django stuff:
 *.log
 
-# Sphinx documentation
-docs/
-/docs_src/apidocs
-
 
 # PyBuilder
 target/
