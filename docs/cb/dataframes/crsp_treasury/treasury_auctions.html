@@ -1,0 +1,2019 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dataframe: crsp_treasury:treasury_auctions - treasury_auctions &#8212; CRSP Treasury</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=206a6f58" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=b9472d72"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cb/dataframes/crsp_treasury/treasury_auctions';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Dataframe: crsp_treasury:ftsfr_treas_bond_portfolio_returns - ftsfr_treas_bond_portfolio_returns" href="ftsfr_treas_bond_portfolio_returns.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="CRSP Treasury - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="CRSP Treasury - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    CRSP Treasury
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks 📖</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/crsp_treasury/summary_treasury_bond_returns_ipynb.html">Cleaning Summary: Treasury Bond Returns</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pipeline Charts 📈</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../charts.html">Chart List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pipeline Dataframes 📊</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="crsp_treasury_daily.html">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:crsp_treasury_daily</span></code> - crsp_treasury_daily</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ftsfr_treas_bond_portfolio_returns.html">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></code> - ftsfr_treas_bond_portfolio_returns</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:treasury_auctions</span></code> - treasury_auctions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__category">
+  <h3>
+    <a href="../../charts/index/category.html">Categories</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="../../charts/index/category/bonds.html">Bonds (2)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/cumulative-returns.html">Cumulative Returns (1)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/replication.html">Replication (2)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/returns.html">Returns (1)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/treasury.html">Treasury (2)</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__tags">
+  <link
+    rel="stylesheet"
+    href="../../../_static/ablog/tagcloud.css"
+    type="text/css"
+  />
+  <h3><a href="../../charts/index/tag.html">Tags</a></h3>
+  <ul class="ablog-cloud">
+     
+    <li class="ablog-cloud ablog-cloud-3">
+      <a href="../../charts/index/tag/crsp-treasury-database.html">CRSP Treasury Database</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/cb/dataframes/crsp_treasury/treasury_auctions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dataframe: crsp_treasury:treasury_auctions - treasury_auctions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-advantages">Key Advantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-auction-process">Treasury Auction Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-the-auction-process">Steps in the Auction Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-and-their-importance">Key Metrics and Their Importance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dictionary">Data Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-identification-and-characteristics">1. Security Identification and Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cusip">cusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#announcedcusip">announcedCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originalcusip">originalCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytype">securityType</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securityterm">securityTerm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#term">term</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytermdaymonth">securityTermDayMonth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytermweekyear">securityTermWeekYear</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originalsecurityterm">originalSecurityTerm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interestrate">interestRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">tips</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callable">callable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strippable">strippable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reopening">reopening</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#series">series</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-dates-and-timeline">2. Auction Dates and Timeline</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#announcementdate">announcementDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctiondate">auctionDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctiondateyear">auctionDateYear</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#issuedate">issueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maturitydate">maturityDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dateddate">datedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originaldateddate">originalDatedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#firstinterestpaymentdate">firstInterestPaymentDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maturingdate">maturingDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calldate">callDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calleddate">calledDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backdateddate">backDatedDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runness-indicator">3. Runness Indicator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run">run</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-metrics">4. Auction Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bidtocoverratio">bidToCoverRatio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#totaltendered">totalTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#totalaccepted">totalAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offeringamount">offeringAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allocationpercentage">allocationPercentage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allocationpercentagedecimals">allocationPercentageDecimals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-rates-and-pricing">5. Interest Rates and Pricing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianprice">averageMedianPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highprice">highPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowprice">lowPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustedprice">adjustedPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unadjustedprice">unadjustedPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#priceper100">pricePer100</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianyield">averageMedianYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highyield">highYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowyield">lowYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemediandiscountrate">averageMedianDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highdiscountrate">highDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowdiscountrate">lowDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianinvestmentrate">averageMedianInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highinvestmentrate">highInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowinvestmentrate">lowInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemediandiscountmargin">averageMedianDiscountMargin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highdiscountmargin">highDiscountMargin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowdiscountmargin">lowDiscountMargin</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bidder-participation">6. Bidder Participation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivetendered">competitiveTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitiveaccepted">competitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivetendersaccepted">competitiveTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noncompetitiveaccepted">noncompetitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noncompetitivetendersaccepted">noncompetitiveTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primarydealertendered">primaryDealerTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primarydealeraccepted">primaryDealerAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#directbiddertendered">directBidderTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#directbidderaccepted">directBidderAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indirectbiddertendered">indirectBidderTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indirectbidderaccepted">indirectBidderAccepted</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-reserve-participation-soma">7. Federal Reserve Participation (SOMA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaincluded">somaIncluded</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somatendered">somaTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaaccepted">somaAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaholdings">somaHoldings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-and-international-participation">8. Foreign and International Participation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimaincluded">fimaIncluded</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimanoncompetitiveaccepted">fimaNoncompetitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimanoncompetitivetendered">fimaNoncompetitiveTendered</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outstanding-amounts-and-issue-size">9. Outstanding Amounts and Issue Size</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#currentlyoutstanding">currentlyOutstanding</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#estimatedamountofpubliclyheldmaturingsecuritiesbytype">estimatedAmountOfPubliclyHeldMaturingSecuritiesByType</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-retail-and-special-programs">10. Treasury Retail and Special Programs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treasuryretailtendersaccepted">treasuryRetailTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treasuryretailaccepted">treasuryRetailAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cashmanagementbillcmb">cashManagementBillCMB</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accrued-interest-and-index-adjustments">11. Accrued Interest and Index Adjustments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accruedinterestper100">accruedInterestPer100</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accruedinterestper1000">accruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustedaccruedinterestper1000">adjustedAccruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unadjustedaccruedinterestper1000">unadjustedAccruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardinterestpaymentper1000">standardInterestPaymentPer1000</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-specific-fields">12. TIPS-Specific Fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refcpionissuedate">refCpiOnIssueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refcpiondateddate">refCpiOnDatedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpibasereferenceperiod">cpiBaseReferencePeriod</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexratioonissuedate">indexRatioOnIssueDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-rate-notes-frn-specific-fields">13. Floating Rate Notes (FRN) Specific Fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floatingrate">floatingRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frnindexdeterminationdate">frnIndexDeterminationDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frnindexdeterminationrate">frnIndexDeterminationRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spread">spread</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-rules-and-parameters">14. Auction Rules and Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumbidamount">minimumBidAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumstripamount">minimumStripAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumtoissue">minimumToIssue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplestobid">multiplesToBid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplestoissue">multiplesToIssue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumcompetitiveaward">maximumCompetitiveAward</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumnoncompetitiveaward">maximumNoncompetitiveAward</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumsinglebid">maximumSingleBid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivebiddecimals">competitiveBidDecimals</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#closingtimecompetitive">closingTimeCompetitive</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#closingtimenoncompetitive">closingTimeNoncompetitive</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#net-long-position-nlp-reporting">15. Net Long Position (NLP) Reporting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nlpreportingthreshold">nlpReportingThreshold</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nlpexclusionamount">nlpExclusionAmount</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-format-and-type">16. Auction Format and Type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctionformat">auctionFormat</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backdated">backDated</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-payment-details">17. Interest Payment Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interestpaymentfrequency">interestPaymentFrequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#firstinterestperiod">firstInterestPeriod</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strips-and-conversion-factors">18. STRIPS and Conversion Factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#corpuscusip">corpusCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tiinconversionfactorper1000">tiinConversionFactorPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip1">tintCusip1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip2">tintCusip2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip1duedate">tintCusip1DueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip2duedate">tintCusip2DueDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-references">19. Documentation References</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenameannouncement">pdfFilenameAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamecompetitiveresults">pdfFilenameCompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamenoncompetitiveresults">pdfFilenameNoncompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamespecialannouncement">pdfFilenameSpecialAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenameannouncement">xmlFilenameAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenamecompetitiveresults">xmlFilenameCompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenamespecialannouncement">xmlFilenameSpecialAnnouncement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-update-information">20. Data Update Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updatedtimestamp">updatedTimestamp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-crsp-tfz-with-runness">Comparison with CRSP_TFZ_with_runness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-notes">Data Quality Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-use-cases">Analytical Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-analysis">1. Demand Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-performance">2. Auction Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-behavior-and-investor-classes">3. Market Behavior and Investor Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-reserve-policy-impact">4. Federal Reserve Policy Impact</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yield-and-term-structure">5. Yield and Term Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inflation-expectations">6. Inflation Expectations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-demand">7. Foreign Demand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-run-liquidity-premium">8. On-the-Run Liquidity Premium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-helper-function">Using the helper function:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-loading">Direct loading:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-statistics">Dataset Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-datasets">Related Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-glimpse">DataFrame Glimpse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-manifest">Dataframe Manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-manifest">Pipeline Manifest</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="dataframe-crsp-treasury-treasury-auctions-treasury-auctions">
+<h1>Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:treasury_auctions</span></code> - treasury_auctions<a class="headerlink" href="#dataframe-crsp-treasury-treasury-auctions-treasury-auctions" title="Link to this heading">#</a></h1>
+<p>Treasury Auction Data with Runness</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This dataset combines comprehensive U.S. Treasury auction statistics from <a class="reference external" href="http://TreasuryDirect.gov">TreasuryDirect.gov</a> with runness calculations. Unlike the CRSP-based dataset, this data is <strong>frequently updated with minimal lag</strong>, making it ideal for real-time analysis of Treasury market conditions.</p>
+<p>The dataset provides detailed information about U.S. Treasury securities and auction outcomes. Treasury securities are financial instruments used by the U.S. government to borrow money. The auction process is a critical mechanism that determines the demand for these securities, their pricing, and the borrowing cost for the government.</p>
+</section>
+<section id="key-advantages">
+<h2>Key Advantages<a class="headerlink" href="#key-advantages" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>No CRSP Lag</strong>: Data comes directly from <a class="reference external" href="http://TreasuryDirect.gov">TreasuryDirect.gov</a> and is updated very frequently</p></li>
+<li><p><strong>Comprehensive Auction Statistics</strong>: Includes bid-to-cover ratios, SOMA participation, dealer bidding data, and detailed auction results</p></li>
+<li><p><strong>Current Runness Measures</strong>: On-the-run vs off-the-run status calculated from the most recent auction data</p></li>
+<li><p><strong>Rich Market Context</strong>: Captures full auction dynamics including competitive and non-competitive bidding</p></li>
+</ul>
+</section>
+<section id="data-sources">
+<h2>Data Sources<a class="headerlink" href="#data-sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Primary</strong>: <a class="reference external" href="http://TreasuryDirect.gov">TreasuryDirect.gov</a> Web API (<a class="reference external" href="https://treasurydirect.gov/TA_WS/securities/jqsearch">https://treasurydirect.gov/TA_WS/securities/jqsearch</a>)</p></li>
+<li><p><strong>Runness Calculations</strong>: Derived from auction data, grouped by security type (Note/Bond) and standard auction terms</p></li>
+</ul>
+</section>
+<section id="treasury-auction-process">
+<h2>Treasury Auction Process<a class="headerlink" href="#treasury-auction-process" title="Link to this heading">#</a></h2>
+<section id="steps-in-the-auction-process">
+<h3>Steps in the Auction Process<a class="headerlink" href="#steps-in-the-auction-process" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Announcement</strong>: The Treasury announces the auction, specifying the type of security, term, offering amount, auction date, and other details.</p></li>
+<li><p><strong>Bidding</strong>: There are two types of bids:</p>
+<ul class="simple">
+<li><p><strong>Competitive Bids</strong>: Investors specify the yield or discount rate they are willing to accept. These bids are ranked, and the lowest yields are accepted until the entire offering amount is allocated.</p></li>
+<li><p><strong>Non-Competitive Bids</strong>: Investors agree to accept the yield determined by the auction. These bids are guaranteed to be accepted up to a maximum limit.</p></li>
+</ul>
+</li>
+<li><p><strong>Auction Closing</strong>: Competitive bids are sorted by yield, and the Treasury determines the “stop-out yield” (the highest accepted yield). Non-competitive bids are then allocated at the stop-out yield.</p></li>
+<li><p><strong>Settlement</strong>: Securities are issued, and funds are received by the Treasury.</p></li>
+</ol>
+</section>
+<section id="key-metrics-and-their-importance">
+<h3>Key Metrics and Their Importance<a class="headerlink" href="#key-metrics-and-their-importance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Latent Demand</strong>: Demand for Treasury securities can be inferred by studying the <strong>bid-to-cover ratio</strong> (total bids relative to the offering amount) and the <strong>total tendered</strong> (total dollar amount of bids).</p></li>
+<li><p><strong>Auction Performance</strong>: To evaluate how well the auction performed, metrics like <strong>average price</strong>, <strong>high yield</strong>, and <strong>stop-out yield</strong> are useful.</p></li>
+<li><p><strong>Investor Behavior</strong>: The breakdown of <strong>competitive</strong> vs. <strong>non-competitive bids</strong>, as well as the participation of <strong>direct</strong>, <strong>indirect</strong>, and <strong>primary dealer</strong> bidders, sheds light on market participation and preferences.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-dictionary">
+<h2>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Link to this heading">#</a></h2>
+<p>The columns are grouped by <strong>themes</strong> based on their purpose and relationship to the auction process. Each column includes its data type and a detailed description.</p>
+<section id="security-identification-and-characteristics">
+<h3>1. Security Identification and Characteristics<a class="headerlink" href="#security-identification-and-characteristics" title="Link to this heading">#</a></h3>
+<p>This group helps identify and classify Treasury securities.</p>
+<section id="cusip">
+<h4>cusip<a class="headerlink" href="#cusip" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The unique 9-character identifier assigned to the security by the Committee on Uniform Securities Identification Procedures (CUSIP). Essential for tracking individual securities across datasets and time.</p>
+</section>
+<section id="announcedcusip">
+<h4>announcedCusip<a class="headerlink" href="#announcedcusip" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The CUSIP announced at the time of auction announcement. May differ from the final CUSIP for reopened securities.</p>
+</section>
+<section id="originalcusip">
+<h4>originalCusip<a class="headerlink" href="#originalcusip" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The CUSIP from the original issue date. For reopened securities (securities that are reissued after their initial offering), this helps track the original security.</p>
+</section>
+<section id="securitytype">
+<h4>securityType<a class="headerlink" href="#securitytype" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The type of security (e.g., “Bill,” “Note,” “Bond,” or “TIPS”). This allows categorization of securities by instrument type. Notes typically have maturities of 2-10 years, while Bonds have maturities of 20-30 years.</p>
+</section>
+<section id="securityterm">
+<h4>securityTerm<a class="headerlink" href="#securityterm" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The term of the security as announced, such as “2-Year Note,” “10-Year Note,” or “30-Year Bond.” This describes the maturity horizon of the instrument at issuance.</p>
+</section>
+<section id="term">
+<h4>term<a class="headerlink" href="#term" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Standardized auction term designation (e.g., “2-Year”, “10-Year”, “30-Year”) used for runness calculation and grouping securities by auction series.</p>
+</section>
+<section id="type">
+<h4>type<a class="headerlink" href="#type" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Security type classification used for runness calculations: “Note” or “Bond”. This is used in conjunction with <code class="docutils literal notranslate"><span class="pre">term</span></code> to properly group securities for on-the-run/off-the-run designation.</p>
+</section>
+<section id="securitytermdaymonth">
+<h4>securityTermDayMonth<a class="headerlink" href="#securitytermdaymonth" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Short-term security term expressed in days or months (e.g., “91-Day” for bills).</p>
+</section>
+<section id="securitytermweekyear">
+<h4>securityTermWeekYear<a class="headerlink" href="#securitytermweekyear" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Security term expressed in weeks or years for clarity.</p>
+</section>
+<section id="originalsecurityterm">
+<h4>originalSecurityTerm<a class="headerlink" href="#originalsecurityterm" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The original term when the security was first issued. For reopened securities, this differs from the current remaining term.</p>
+</section>
+<section id="interestrate">
+<h4>interestRate<a class="headerlink" href="#interestrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The coupon rate or fixed annual interest rate of the security, expressed as a percentage. For example, 2.5 represents a 2.5% annual coupon. Zero for bills.</p>
+</section>
+<section id="tips">
+<h4>tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether the security is a Treasury Inflation-Protected Security (TIPS). TIPS principal values are adjusted for inflation based on the Consumer Price Index.</p>
+</section>
+<section id="callable">
+<h4>callable<a class="headerlink" href="#callable" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether the security is callable (i.e., it can be redeemed by the Treasury before maturity). Most modern Treasury securities are not callable.</p>
+</section>
+<section id="strippable">
+<h4>strippable<a class="headerlink" href="#strippable" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether the security can be “stripped” into separate principal and interest components that trade independently (STRIPS - Separate Trading of Registered Interest and Principal Securities).</p>
+</section>
+<section id="reopening">
+<h4>reopening<a class="headerlink" href="#reopening" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating if this auction is a reopening of a previously issued security. Reopenings allow the Treasury to issue additional amounts of an existing security.</p>
+</section>
+<section id="series">
+<h4>series<a class="headerlink" href="#series" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Series designation for savings bonds or other special securities.</p>
+</section>
+</section>
+<section id="auction-dates-and-timeline">
+<h3>2. Auction Dates and Timeline<a class="headerlink" href="#auction-dates-and-timeline" title="Link to this heading">#</a></h3>
+<p>These columns capture the key dates in the lifecycle of Treasury securities.</p>
+<section id="announcementdate">
+<h4>announcementDate<a class="headerlink" href="#announcementdate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date when the Treasury announced the auction. This is when investors first learn about the upcoming auction details.</p>
+</section>
+<section id="auctiondate">
+<h4>auctionDate<a class="headerlink" href="#auctiondate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date the auction was held. This is when bids are submitted and the stop-out yield is determined. This is the primary date used for time-series analysis.</p>
+</section>
+<section id="auctiondateyear">
+<h4>auctionDateYear<a class="headerlink" href="#auctiondateyear" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">int64</span></code>
+<strong>Description</strong>: The year of the auction date, extracted for convenience in temporal analysis.</p>
+</section>
+<section id="issuedate">
+<h4>issueDate<a class="headerlink" href="#issuedate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date when the security was issued to investors and funds were transferred to the Treasury. Typically 1-7 days after the auction date.</p>
+</section>
+<section id="maturitydate">
+<h4>maturityDate<a class="headerlink" href="#maturitydate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date when the security matures and the principal is repaid to investors. This determines the security’s term structure position.</p>
+</section>
+<section id="dateddate">
+<h4>datedDate<a class="headerlink" href="#dateddate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date from which interest starts accruing. For reopened securities, this may differ from the issue date and matches the original issue’s dated date.</p>
+</section>
+<section id="originaldateddate">
+<h4>originalDatedDate<a class="headerlink" href="#originaldateddate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The dated date from the original security issue, used for reopened securities.</p>
+</section>
+<section id="firstinterestpaymentdate">
+<h4>firstInterestPaymentDate<a class="headerlink" href="#firstinterestpaymentdate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date of the first interest payment (for securities with periodic interest). Most Treasury notes and bonds pay interest semi-annually.</p>
+</section>
+<section id="maturingdate">
+<h4>maturingDate<a class="headerlink" href="#maturingdate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Date when maturing securities from a previous issue are replaced by this new issue (relevant for refinancing operations).</p>
+</section>
+<section id="calldate">
+<h4>callDate<a class="headerlink" href="#calldate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: First eligible call date for callable securities. Missing for non-callable securities.</p>
+</section>
+<section id="calleddate">
+<h4>calledDate<a class="headerlink" href="#calleddate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Actual date the security was called, if applicable.</p>
+</section>
+<section id="backdateddate">
+<h4>backDatedDate<a class="headerlink" href="#backdateddate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Alternative dated date used in special circumstances.</p>
+</section>
+</section>
+<section id="runness-indicator">
+<h3>3. Runness Indicator<a class="headerlink" href="#runness-indicator" title="Link to this heading">#</a></h3>
+<p>This critical field identifies the on-the-run status of securities.</p>
+<section id="run">
+<h4>run<a class="headerlink" href="#run" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">int64</span></code>
+<strong>Description</strong>: Runness indicator showing how recently the security was issued relative to others in its auction series. Values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> = On-the-run (most recently issued for this term and type)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = First off-the-run (previously on-the-run)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = Second off-the-run</p></li>
+<li><p>Higher values indicate older issues</p></li>
+</ul>
+<p>The runness calculation is performed by grouping securities by their <code class="docutils literal notranslate"><span class="pre">type</span></code> (Note/Bond) and <code class="docutils literal notranslate"><span class="pre">term</span></code> (2-Year, 10-Year, etc.), then ranking by auction date. This provides accurate classification of liquidity tiers, as on-the-run securities typically trade with higher liquidity and lower yields than off-the-run securities.</p>
+</section>
+</section>
+<section id="auction-metrics">
+<h3>4. Auction Metrics<a class="headerlink" href="#auction-metrics" title="Link to this heading">#</a></h3>
+<p>These columns contain key auction performance indicators that reveal market demand and auction success.</p>
+<section id="bidtocoverratio">
+<h4>bidToCoverRatio<a class="headerlink" href="#bidtocoverratio" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The ratio of total bids tendered to the offering amount. Formula: <code class="docutils literal notranslate"><span class="pre">totalTendered</span> <span class="pre">/</span> <span class="pre">offeringAmount</span></code>. A higher ratio indicates stronger demand. Typical ratios range from 2.0 to 3.5, with values below 2.0 suggesting weak demand and values above 3.5 indicating very strong demand.</p>
+</section>
+<section id="totaltendered">
+<h4>totalTendered<a class="headerlink" href="#totaltendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) of all bids submitted during the auction, including both competitive and non-competitive bids. This represents gross demand for the security.</p>
+</section>
+<section id="totalaccepted">
+<h4>totalAccepted<a class="headerlink" href="#totalaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) of bids accepted by the Treasury. This equals the <code class="docutils literal notranslate"><span class="pre">offeringAmount</span></code> for successful auctions.</p>
+</section>
+<section id="offeringamount">
+<h4>offeringAmount<a class="headerlink" href="#offeringamount" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) offered by the Treasury in the auction. This is the amount the Treasury seeks to borrow.</p>
+</section>
+<section id="allocationpercentage">
+<h4>allocationPercentage<a class="headerlink" href="#allocationpercentage" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The percentage of the maximum allocation awarded to successful bidders at the high (stop-out) yield/rate. Values less than 100% indicate that bids at the high yield were prorated.</p>
+</section>
+<section id="allocationpercentagedecimals">
+<h4>allocationPercentageDecimals<a class="headerlink" href="#allocationpercentagedecimals" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">int64</span></code>
+<strong>Description</strong>: Number of decimal places used for allocation percentage precision.</p>
+</section>
+</section>
+<section id="interest-rates-and-pricing">
+<h3>5. Interest Rates and Pricing<a class="headerlink" href="#interest-rates-and-pricing" title="Link to this heading">#</a></h3>
+<p>These columns reflect the interest rates and pricing outcomes, which determine the government’s borrowing cost.</p>
+<section id="averagemedianprice">
+<h4>averageMedianPrice<a class="headerlink" href="#averagemedianprice" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The average or median price (per <span class="math notranslate nohighlight">\(100 face value) from competitive bidding during the auction. For notes and bonds, prices are quoted per \)</span>100 face value.</p>
+</section>
+<section id="highprice">
+<h4>highPrice<a class="headerlink" href="#highprice" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The highest price accepted in the auction (corresponds to the lowest yield). Competitive bidders pay their bid price (not the stop-out).</p>
+</section>
+<section id="lowprice">
+<h4>lowPrice<a class="headerlink" href="#lowprice" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The lowest price accepted in the auction (corresponds to the highest yield - the stop-out yield).</p>
+</section>
+<section id="adjustedprice">
+<h4>adjustedPrice<a class="headerlink" href="#adjustedprice" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The price of the security after adjustments (e.g., for inflation indexing in TIPS).</p>
+</section>
+<section id="unadjustedprice">
+<h4>unadjustedPrice<a class="headerlink" href="#unadjustedprice" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The price before any adjustments, useful for TIPS comparisons.</p>
+</section>
+<section id="priceper100">
+<h4>pricePer100<a class="headerlink" href="#priceper100" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Standardized price quotation per $100 face value.</p>
+</section>
+<section id="averagemedianyield">
+<h4>averageMedianYield<a class="headerlink" href="#averagemedianyield" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The median yield (for notes/bonds) or investment rate (for bills) of successful competitive bidders. This is the effective borrowing cost for the Treasury.</p>
+</section>
+<section id="highyield">
+<h4>highYield<a class="headerlink" href="#highyield" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The highest accepted yield during the auction, also called the “stop-out yield.” This is the yield at which the auction clears. Non-competitive bidders receive this yield.</p>
+</section>
+<section id="lowyield">
+<h4>lowYield<a class="headerlink" href="#lowyield" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The lowest yield offered by competitive bidders that was accepted.</p>
+</section>
+<section id="averagemediandiscountrate">
+<h4>averageMedianDiscountRate<a class="headerlink" href="#averagemediandiscountrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: For Treasury bills, the average discount rate (different from investment rate). Bills are sold at a discount and don’t pay periodic interest.</p>
+</section>
+<section id="highdiscountrate">
+<h4>highDiscountRate<a class="headerlink" href="#highdiscountrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Highest accepted discount rate for bills.</p>
+</section>
+<section id="lowdiscountrate">
+<h4>lowDiscountRate<a class="headerlink" href="#lowdiscountrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Lowest accepted discount rate for bills.</p>
+</section>
+<section id="averagemedianinvestmentrate">
+<h4>averageMedianInvestmentRate<a class="headerlink" href="#averagemedianinvestmentrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: For bills, the investment rate (equivalent to bond-equivalent yield), which accounts for the actual return an investor earns.</p>
+</section>
+<section id="highinvestmentrate">
+<h4>highInvestmentRate<a class="headerlink" href="#highinvestmentrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Highest investment rate for bills.</p>
+</section>
+<section id="lowinvestmentrate">
+<h4>lowInvestmentRate<a class="headerlink" href="#lowinvestmentrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Lowest investment rate for bills.</p>
+</section>
+<section id="averagemediandiscountmargin">
+<h4>averageMedianDiscountMargin<a class="headerlink" href="#averagemediandiscountmargin" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: For floating rate notes (FRNs), the discount margin over the reference rate.</p>
+</section>
+<section id="highdiscountmargin">
+<h4>highDiscountMargin<a class="headerlink" href="#highdiscountmargin" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Highest accepted discount margin for FRNs.</p>
+</section>
+<section id="lowdiscountmargin">
+<h4>lowDiscountMargin<a class="headerlink" href="#lowdiscountmargin" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Lowest accepted discount margin for FRNs.</p>
+</section>
+</section>
+<section id="bidder-participation">
+<h3>6. Bidder Participation<a class="headerlink" href="#bidder-participation" title="Link to this heading">#</a></h3>
+<p>These columns provide detailed insights into bidder behavior and participation across different investor classes.</p>
+<section id="competitivetendered">
+<h4>competitiveTendered<a class="headerlink" href="#competitivetendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) of competitive bids submitted. Competitive bidders specify the yield/rate they will accept.</p>
+</section>
+<section id="competitiveaccepted">
+<h4>competitiveAccepted<a class="headerlink" href="#competitiveaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) of competitive bids accepted by the Treasury.</p>
+</section>
+<section id="competitivetendersaccepted">
+<h4>competitiveTendersAccepted<a class="headerlink" href="#competitivetendersaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether any competitive tenders were accepted.</p>
+</section>
+<section id="noncompetitiveaccepted">
+<h4>noncompetitiveAccepted<a class="headerlink" href="#noncompetitiveaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) of non-competitive bids accepted. Non-competitive bidders agree to accept whatever yield is determined at auction and are guaranteed acceptance up to limits (<span class="math notranslate nohighlight">\(10 million for Treasury bills, \)</span>5 million for notes/bonds).</p>
+</section>
+<section id="noncompetitivetendersaccepted">
+<h4>noncompetitiveTendersAccepted<a class="headerlink" href="#noncompetitivetendersaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether any non-competitive tenders were accepted.</p>
+</section>
+<section id="primarydealertendered">
+<h4>primaryDealerTendered<a class="headerlink" href="#primarydealertendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (in millions) tendered by primary dealers. Primary dealers are banks and financial institutions authorized to trade directly with the Federal Reserve and have special obligations to participate in Treasury auctions.</p>
+</section>
+<section id="primarydealeraccepted">
+<h4>primaryDealerAccepted<a class="headerlink" href="#primarydealeraccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The amount (in millions) accepted from primary dealers. Primary dealers typically account for 40-60% of accepted bids.</p>
+</section>
+<section id="directbiddertendered">
+<h4>directBidderTendered<a class="headerlink" href="#directbiddertendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The amount (in millions) tendered by direct bidders. Direct bidders are institutional investors (mutual funds, pension funds, foreign central banks) bidding directly with the Treasury rather than through primary dealers.</p>
+</section>
+<section id="directbidderaccepted">
+<h4>directBidderAccepted<a class="headerlink" href="#directbidderaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The amount (in millions) accepted from direct bidders. High direct bidder participation often indicates strong foreign central bank demand.</p>
+</section>
+<section id="indirectbiddertendered">
+<h4>indirectBidderTendered<a class="headerlink" href="#indirectbiddertendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The amount (in millions) tendered by indirect bidders. Indirect bidders submit through primary dealers and include foreign investors and foreign official institutions.</p>
+</section>
+<section id="indirectbidderaccepted">
+<h4>indirectBidderAccepted<a class="headerlink" href="#indirectbidderaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The amount (in millions) accepted from indirect bidders. Indirect bidder participation is watched closely as a gauge of foreign demand.</p>
+</section>
+</section>
+<section id="federal-reserve-participation-soma">
+<h3>7. Federal Reserve Participation (SOMA)<a class="headerlink" href="#federal-reserve-participation-soma" title="Link to this heading">#</a></h3>
+<p>These columns track Federal Reserve System Open Market Account (SOMA) participation in Treasury auctions.</p>
+<section id="somaincluded">
+<h4>somaIncluded<a class="headerlink" href="#somaincluded" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether the Federal Reserve (SOMA) participated in this auction. SOMA participation occurs during quantitative easing programs or to reinvest maturing securities.</p>
+</section>
+<section id="somatendered">
+<h4>somaTendered<a class="headerlink" href="#somatendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The dollar amount (in millions) the Federal Reserve bid for in the auction.</p>
+</section>
+<section id="somaaccepted">
+<h4>somaAccepted<a class="headerlink" href="#somaaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The dollar amount (in millions) the Federal Reserve was awarded. SOMA participates as a non-competitive bidder with special arrangements.</p>
+</section>
+<section id="somaholdings">
+<h4>somaHoldings<a class="headerlink" href="#somaholdings" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The Federal Reserve’s current holdings (in millions) of this specific security. This is important for understanding the Fed’s balance sheet composition and the float available for private investors.</p>
+</section>
+</section>
+<section id="foreign-and-international-participation">
+<h3>8. Foreign and International Participation<a class="headerlink" href="#foreign-and-international-participation" title="Link to this heading">#</a></h3>
+<section id="fimaincluded">
+<h4>fimaIncluded<a class="headerlink" href="#fimaincluded" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether the Foreign and International Monetary Authorities (FIMA) participated. FIMA includes foreign central banks and international organizations.</p>
+</section>
+<section id="fimanoncompetitiveaccepted">
+<h4>fimaNoncompetitiveAccepted<a class="headerlink" href="#fimanoncompetitiveaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Amount (in millions) accepted from FIMA participants as non-competitive bids.</p>
+</section>
+<section id="fimanoncompetitivetendered">
+<h4>fimaNoncompetitiveTendered<a class="headerlink" href="#fimanoncompetitivetendered" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Amount (in millions) tendered by FIMA participants.</p>
+</section>
+</section>
+<section id="outstanding-amounts-and-issue-size">
+<h3>9. Outstanding Amounts and Issue Size<a class="headerlink" href="#outstanding-amounts-and-issue-size" title="Link to this heading">#</a></h3>
+<section id="currentlyoutstanding">
+<h4>currentlyOutstanding<a class="headerlink" href="#currentlyoutstanding" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The total dollar amount (face value, in millions) currently outstanding for this specific CUSIP, including all issuances and reopenings.</p>
+</section>
+<section id="estimatedamountofpubliclyheldmaturingsecuritiesbytype">
+<h4>estimatedAmountOfPubliclyHeldMaturingSecuritiesByType<a class="headerlink" href="#estimatedamountofpubliclyheldmaturingsecuritiesbytype" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Estimated amount (in millions) of publicly held securities of this type maturing around this auction, relevant for refinancing operations.</p>
+</section>
+</section>
+<section id="treasury-retail-and-special-programs">
+<h3>10. Treasury Retail and Special Programs<a class="headerlink" href="#treasury-retail-and-special-programs" title="Link to this heading">#</a></h3>
+<section id="treasuryretailtendersaccepted">
+<h4>treasuryRetailTendersAccepted<a class="headerlink" href="#treasuryretailtendersaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether retail investors’ tenders were accepted.</p>
+</section>
+<section id="treasuryretailaccepted">
+<h4>treasuryRetailAccepted<a class="headerlink" href="#treasuryretailaccepted" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Amount (in millions) accepted from retail investors through TreasuryDirect and legacy systems.</p>
+</section>
+<section id="cashmanagementbillcmb">
+<h4>cashManagementBillCMB<a class="headerlink" href="#cashmanagementbillcmb" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating whether this is a Cash Management Bill (CMB). CMBs are short-term bills issued on an as-needed basis with irregular terms.</p>
+</section>
+</section>
+<section id="accrued-interest-and-index-adjustments">
+<h3>11. Accrued Interest and Index Adjustments<a class="headerlink" href="#accrued-interest-and-index-adjustments" title="Link to this heading">#</a></h3>
+<section id="accruedinterestper100">
+<h4>accruedInterestPer100<a class="headerlink" href="#accruedinterestper100" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Accrued interest per $100 face value from the dated date to the issue date, important for reopened securities.</p>
+</section>
+<section id="accruedinterestper1000">
+<h4>accruedInterestPer1000<a class="headerlink" href="#accruedinterestper1000" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Accrued interest per $1,000 face value.</p>
+</section>
+<section id="adjustedaccruedinterestper1000">
+<h4>adjustedAccruedInterestPer1000<a class="headerlink" href="#adjustedaccruedinterestper1000" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Inflation-adjusted accrued interest for TIPS, per $1,000 face value.</p>
+</section>
+<section id="unadjustedaccruedinterestper1000">
+<h4>unadjustedAccruedInterestPer1000<a class="headerlink" href="#unadjustedaccruedinterestper1000" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Unadjusted (nominal) accrued interest for TIPS comparisons.</p>
+</section>
+<section id="standardinterestpaymentper1000">
+<h4>standardInterestPaymentPer1000<a class="headerlink" href="#standardinterestpaymentper1000" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Standard semi-annual interest payment per $1,000 face value based on the coupon rate.</p>
+</section>
+</section>
+<section id="tips-specific-fields">
+<h3>12. TIPS-Specific Fields<a class="headerlink" href="#tips-specific-fields" title="Link to this heading">#</a></h3>
+<p>These fields apply only to Treasury Inflation-Protected Securities.</p>
+<section id="refcpionissuedate">
+<h4>refCpiOnIssueDate<a class="headerlink" href="#refcpionissuedate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Reference Consumer Price Index (CPI) value on the issue date. TIPS principal is adjusted based on CPI changes.</p>
+</section>
+<section id="refcpiondateddate">
+<h4>refCpiOnDatedDate<a class="headerlink" href="#refcpiondateddate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Reference CPI on the dated date, used for calculating inflation adjustments for reopened TIPS.</p>
+</section>
+<section id="cpibasereferenceperiod">
+<h4>cpiBaseReferencePeriod<a class="headerlink" href="#cpibasereferenceperiod" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The base reference period for the CPI index used (e.g., “1982-84=100”).</p>
+</section>
+<section id="indexratioonissuedate">
+<h4>indexRatioOnIssueDate<a class="headerlink" href="#indexratioonissuedate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The inflation index ratio on the issue date. This ratio adjusts the principal value: Adjusted Principal = Original Principal × Index Ratio.</p>
+</section>
+</section>
+<section id="floating-rate-notes-frn-specific-fields">
+<h3>13. Floating Rate Notes (FRN) Specific Fields<a class="headerlink" href="#floating-rate-notes-frn-specific-fields" title="Link to this heading">#</a></h3>
+<section id="floatingrate">
+<h4>floatingRate<a class="headerlink" href="#floatingrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating if this is a Floating Rate Note. FRNs have variable interest rates tied to a reference rate.</p>
+</section>
+<section id="frnindexdeterminationdate">
+<h4>frnIndexDeterminationDate<a class="headerlink" href="#frnindexdeterminationdate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: The date when the reference index rate is determined for the next interest period.</p>
+</section>
+<section id="frnindexdeterminationrate">
+<h4>frnIndexDeterminationRate<a class="headerlink" href="#frnindexdeterminationrate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The actual reference rate determined for the FRN interest calculation.</p>
+</section>
+<section id="spread">
+<h4>spread<a class="headerlink" href="#spread" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The fixed spread added to the reference rate for FRNs.</p>
+</section>
+</section>
+<section id="auction-rules-and-parameters">
+<h3>14. Auction Rules and Parameters<a class="headerlink" href="#auction-rules-and-parameters" title="Link to this heading">#</a></h3>
+<section id="minimumbidamount">
+<h4>minimumBidAmount<a class="headerlink" href="#minimumbidamount" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The minimum bid amount (typically $100) required to participate in the auction.</p>
+</section>
+<section id="minimumstripamount">
+<h4>minimumStripAmount<a class="headerlink" href="#minimumstripamount" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The minimum face value required to strip a security into separate components.</p>
+</section>
+<section id="minimumtoissue">
+<h4>minimumToIssue<a class="headerlink" href="#minimumtoissue" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Minimum amount that must be tendered for the Treasury to proceed with the auction.</p>
+</section>
+<section id="multiplestobid">
+<h4>multiplesToBid<a class="headerlink" href="#multiplestobid" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Increments in which bids must be submitted (e.g., multiples of $100).</p>
+</section>
+<section id="multiplestoissue">
+<h4>multiplesToIssue<a class="headerlink" href="#multiplestoissue" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Increments in which the Treasury will issue the security.</p>
+</section>
+<section id="maximumcompetitiveaward">
+<h4>maximumCompetitiveAward<a class="headerlink" href="#maximumcompetitiveaward" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Maximum dollar amount a single competitive bidder can be awarded (typically 35% of offering amount).</p>
+</section>
+<section id="maximumnoncompetitiveaward">
+<h4>maximumNoncompetitiveAward<a class="headerlink" href="#maximumnoncompetitiveaward" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Maximum dollar amount for non-competitive bids (<span class="math notranslate nohighlight">\(5 million for notes/bonds, \)</span>10 million for bills).</p>
+</section>
+<section id="maximumsinglebid">
+<h4>maximumSingleBid<a class="headerlink" href="#maximumsinglebid" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Maximum dollar amount for a single bid submission.</p>
+</section>
+<section id="competitivebiddecimals">
+<h4>competitiveBidDecimals<a class="headerlink" href="#competitivebiddecimals" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">int64</span></code>
+<strong>Description</strong>: Number of decimal places allowed in competitive bid yields/rates (typically 3 for yields).</p>
+</section>
+<section id="closingtimecompetitive">
+<h4>closingTimeCompetitive<a class="headerlink" href="#closingtimecompetitive" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Deadline time for competitive bids (typically 1:00 PM ET for notes/bonds).</p>
+</section>
+<section id="closingtimenoncompetitive">
+<h4>closingTimeNoncompetitive<a class="headerlink" href="#closingtimenoncompetitive" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Deadline time for non-competitive bids (typically earlier than competitive deadline).</p>
+</section>
+</section>
+<section id="net-long-position-nlp-reporting">
+<h3>15. Net Long Position (NLP) Reporting<a class="headerlink" href="#net-long-position-nlp-reporting" title="Link to this heading">#</a></h3>
+<section id="nlpreportingthreshold">
+<h4>nlpReportingThreshold<a class="headerlink" href="#nlpreportingthreshold" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: The dollar threshold above which bidders must report their net long positions to prevent excessive concentration.</p>
+</section>
+<section id="nlpexclusionamount">
+<h4>nlpExclusionAmount<a class="headerlink" href="#nlpexclusionamount" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Amount excluded from NLP calculations for certain categories of holdings.</p>
+</section>
+</section>
+<section id="auction-format-and-type">
+<h3>16. Auction Format and Type<a class="headerlink" href="#auction-format-and-type" title="Link to this heading">#</a></h3>
+<section id="auctionformat">
+<h4>auctionFormat<a class="headerlink" href="#auctionformat" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: The auction mechanism used (typically “Single-Price” where all accepted bidders pay the stop-out yield, or “Multiple-Price” for older auctions).</p>
+</section>
+<section id="backdated">
+<h4>backDated<a class="headerlink" href="#backdated" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+<strong>Description</strong>: Boolean indicating if the security’s dated date precedes the auction date.</p>
+</section>
+</section>
+<section id="interest-payment-details">
+<h3>17. Interest Payment Details<a class="headerlink" href="#interest-payment-details" title="Link to this heading">#</a></h3>
+<section id="interestpaymentfrequency">
+<h4>interestPaymentFrequency<a class="headerlink" href="#interestpaymentfrequency" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Frequency of interest payments (e.g., “Semi-Annual” for notes/bonds, “Quarterly” for some older issues, or “Maturity” for bills).</p>
+</section>
+<section id="firstinterestperiod">
+<h4>firstInterestPeriod<a class="headerlink" href="#firstinterestperiod" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Length of the first interest period in days, which may differ from standard periods for reopened securities.</p>
+</section>
+</section>
+<section id="strips-and-conversion-factors">
+<h3>18. STRIPS and Conversion Factors<a class="headerlink" href="#strips-and-conversion-factors" title="Link to this heading">#</a></h3>
+<section id="corpuscusip">
+<h4>corpusCusip<a class="headerlink" href="#corpuscusip" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: CUSIP for the principal component when a security is stripped.</p>
+</section>
+<section id="tiinconversionfactorper1000">
+<h4>tiinConversionFactorPer1000<a class="headerlink" href="#tiinconversionfactorper1000" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">float64</span></code>
+<strong>Description</strong>: Conversion factor per $1,000 face value for Treasury Inflation-Indexed Notes (TIIN).</p>
+</section>
+<section id="tintcusip1">
+<h4>tintCusip1<a class="headerlink" href="#tintcusip1" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: First component CUSIP for complex securities.</p>
+</section>
+<section id="tintcusip2">
+<h4>tintCusip2<a class="headerlink" href="#tintcusip2" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Second component CUSIP for complex securities.</p>
+</section>
+<section id="tintcusip1duedate">
+<h4>tintCusip1DueDate<a class="headerlink" href="#tintcusip1duedate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Due date for the first component.</p>
+</section>
+<section id="tintcusip2duedate">
+<h4>tintCusip2DueDate<a class="headerlink" href="#tintcusip2duedate" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Due date for the second component.</p>
+</section>
+</section>
+<section id="documentation-references">
+<h3>19. Documentation References<a class="headerlink" href="#documentation-references" title="Link to this heading">#</a></h3>
+<section id="pdffilenameannouncement">
+<h4>pdfFilenameAnnouncement<a class="headerlink" href="#pdffilenameannouncement" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the PDF containing the official auction announcement.</p>
+</section>
+<section id="pdffilenamecompetitiveresults">
+<h4>pdfFilenameCompetitiveResults<a class="headerlink" href="#pdffilenamecompetitiveresults" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the PDF containing competitive bidding results.</p>
+</section>
+<section id="pdffilenamenoncompetitiveresults">
+<h4>pdfFilenameNoncompetitiveResults<a class="headerlink" href="#pdffilenamenoncompetitiveresults" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the PDF containing non-competitive bidding results.</p>
+</section>
+<section id="pdffilenamespecialannouncement">
+<h4>pdfFilenameSpecialAnnouncement<a class="headerlink" href="#pdffilenamespecialannouncement" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename for special announcements related to the auction.</p>
+</section>
+<section id="xmlfilenameannouncement">
+<h4>xmlFilenameAnnouncement<a class="headerlink" href="#xmlfilenameannouncement" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the XML file containing auction announcement data.</p>
+</section>
+<section id="xmlfilenamecompetitiveresults">
+<h4>xmlFilenameCompetitiveResults<a class="headerlink" href="#xmlfilenamecompetitiveresults" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the XML file containing competitive bidding results.</p>
+</section>
+<section id="xmlfilenamespecialannouncement">
+<h4>xmlFilenameSpecialAnnouncement<a class="headerlink" href="#xmlfilenamespecialannouncement" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">str</span></code>
+<strong>Description</strong>: Filename of the XML file containing special announcements.</p>
+</section>
+</section>
+<section id="data-update-information">
+<h3>20. Data Update Information<a class="headerlink" href="#data-update-information" title="Link to this heading">#</a></h3>
+<section id="updatedtimestamp">
+<h4>updatedTimestamp<a class="headerlink" href="#updatedtimestamp" title="Link to this heading">#</a></h4>
+<p><strong>Type</strong>: <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>
+<strong>Description</strong>: Timestamp of when this auction record was last updated in the TreasuryDirect database.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="comparison-with-crsp-tfz-with-runness">
+<h2>Comparison with CRSP_TFZ_with_runness<a class="headerlink" href="#comparison-with-crsp-tfz-with-runness" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>treasury_auction_with_runness</p></th>
+<th class="head"><p>CRSP_TFZ_with_runness</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Data Lag</strong></p></td>
+<td><p>Minimal (hours/days)</p></td>
+<td><p>Weeks/months</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Update Frequency</strong></p></td>
+<td><p>Very frequent</p></td>
+<td><p>Periodic CRSP updates</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Price Data</strong></p></td>
+<td><p>Auction prices only</p></td>
+<td><p>Daily bid/ask/yields</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Auction Statistics</strong></p></td>
+<td><p>Comprehensive (120 fields)</p></td>
+<td><p>Not included</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SOMA Data</strong></p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bidder Breakdown</strong></p></td>
+<td><p>Yes (primary dealers, direct, indirect)</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Historical Depth</strong></p></td>
+<td><p>Auction dates only</p></td>
+<td><p>Daily time series (1970-present)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Returns Calculation</strong></p></td>
+<td><p>No</p></td>
+<td><p>Yes (daily returns)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Duration Measures</strong></p></td>
+<td><p>No</p></td>
+<td><p>Yes (Macaulay duration)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Best For</strong></p></td>
+<td><p>Current market analysis, auction research, demand analysis</p></td>
+<td><p>Historical price analysis, returns calculation, term structure</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="data-quality-notes">
+<h2>Data Quality Notes<a class="headerlink" href="#data-quality-notes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Security Coverage</strong>: Notes and Bonds only (Bills excluded from runness calculation)</p></li>
+<li><p><strong>Date Alignment</strong>: Runness is calculated as of the auction date</p></li>
+<li><p><strong>Missing Runness</strong>: Securities without runness data (rare edge cases) are assigned <code class="docutils literal notranslate"><span class="pre">run=0</span></code></p></li>
+<li><p><strong>Reopenings</strong>: Reopened securities have both <code class="docutils literal notranslate"><span class="pre">originalCusip</span></code> and current <code class="docutils literal notranslate"><span class="pre">cusip</span></code>, with dated dates matching the original issue</p></li>
+<li><p><strong>TIPS</strong>: Special inflation-adjustment fields available for Treasury Inflation-Protected Securities</p></li>
+<li><p><strong>Missing Values</strong>: Some fields may be null/missing for securities where they don’t apply (e.g., TIPS fields for nominal securities)</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="analytical-use-cases">
+<h2>Analytical Use Cases<a class="headerlink" href="#analytical-use-cases" title="Link to this heading">#</a></h2>
+<section id="demand-analysis">
+<h3>1. Demand Analysis<a class="headerlink" href="#demand-analysis" title="Link to this heading">#</a></h3>
+<p>Use the <strong>bid-to-cover ratio</strong> and <strong>total tendered</strong> columns to measure demand for Treasury securities. Compare these metrics across auction dates, security types, and terms to identify trends in investor appetite. High bid-to-cover ratios (&gt;2.5) indicate strong demand, while low ratios (&lt;2.0) may signal weak demand or rising yield concerns.</p>
+</section>
+<section id="auction-performance">
+<h3>2. Auction Performance<a class="headerlink" href="#auction-performance" title="Link to this heading">#</a></h3>
+<p>Analyze metrics such as <strong>high yield</strong>, <strong>average price</strong>, and <strong>allocation percentage</strong> to assess the success of individual auctions. A “tail” (large spread between average yield and high yield) may indicate weaker demand or market uncertainty.</p>
+</section>
+<section id="market-behavior-and-investor-classes">
+<h3>3. Market Behavior and Investor Classes<a class="headerlink" href="#market-behavior-and-investor-classes" title="Link to this heading">#</a></h3>
+<p>Examine <strong>direct</strong>, <strong>indirect</strong>, and <strong>primary dealer</strong> participation to study the role of different investor groups. During times of economic uncertainty or flight-to-quality, foreign central banks (direct bidders) may increase participation. Primary dealer share can indicate market-making appetite and liquidity conditions.</p>
+</section>
+<section id="federal-reserve-policy-impact">
+<h3>4. Federal Reserve Policy Impact<a class="headerlink" href="#federal-reserve-policy-impact" title="Link to this heading">#</a></h3>
+<p>Track <strong>SOMA participation</strong> to understand Federal Reserve balance sheet operations. During quantitative easing, SOMA accepts large amounts, affecting available float and market liquidity. Changes in SOMA holdings signal shifts in monetary policy.</p>
+</section>
+<section id="yield-and-term-structure">
+<h3>5. Yield and Term Structure<a class="headerlink" href="#yield-and-term-structure" title="Link to this heading">#</a></h3>
+<p>Compare stop-out yields (<strong>highYield</strong>) across maturities and auction dates to construct yield curves and study term structure dynamics. The relationship between on-the-run and off-the-run yields reveals liquidity premiums.</p>
+</section>
+<section id="inflation-expectations">
+<h3>6. Inflation Expectations<a class="headerlink" href="#inflation-expectations" title="Link to this heading">#</a></h3>
+<p>For TIPS, analyze the spread between nominal Treasury yields and TIPS yields (breakeven inflation rate) to gauge market inflation expectations. Compare <strong>bidToCoverRatio</strong> for TIPS vs nominal securities during different inflation regimes.</p>
+</section>
+<section id="foreign-demand">
+<h3>7. Foreign Demand<a class="headerlink" href="#foreign-demand" title="Link to this heading">#</a></h3>
+<p>Monitor <strong>direct bidder</strong> and <strong>indirect bidder</strong> participation as proxies for foreign central bank and foreign institutional demand. High foreign participation supports dollar and Treasury demand; declining participation may signal reduced appetite for U.S. debt.</p>
+</section>
+<section id="on-the-run-liquidity-premium">
+<h3>8. On-the-Run Liquidity Premium<a class="headerlink" href="#on-the-run-liquidity-premium" title="Link to this heading">#</a></h3>
+<p>Use the <strong>run</strong> indicator to study how auction demand differs between on-the-run (run=0) and off-the-run securities. On-the-run securities typically have higher bid-to-cover ratios and lower yields due to superior liquidity.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="loading-the-data">
+<h2>Loading the Data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h2>
+<section id="using-the-helper-function">
+<h3>Using the helper function:<a class="headerlink" href="#using-the-helper-function" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">src.pull_CRSP_treasury</span> <span class="kn">import</span> <span class="n">load_treasury_auction_with_runness</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_treasury_auction_with_runness</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="direct-loading">
+<h3>Direct loading:<a class="headerlink" href="#direct-loading" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">chartbook</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">chartbook</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_project_root</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;_data&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;treasury_auction_with_runness.parquet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="dataset-statistics">
+<h2>Dataset Statistics<a class="headerlink" href="#dataset-statistics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Total Records</strong>: 10,722+ auction records</p></li>
+<li><p><strong>Security Types</strong>: Notes and Bonds (Bills excluded)</p></li>
+<li><p><strong>Date Range</strong>: Historical auctions through present</p></li>
+<li><p><strong>Update Frequency</strong>: Very frequent (hours to days after auction)</p></li>
+<li><p><strong>Total Fields</strong>: 120+ columns</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>TreasuryDirect API Documentation: <a class="reference external" href="https://treasurydirect.gov/TA_WS/securities/jqsearch">https://treasurydirect.gov/TA_WS/securities/jqsearch</a></p></li>
+<li><p>Treasury Auction Process: <a class="reference external" href="https://treasurydirect.gov/auctions/">https://treasurydirect.gov/auctions/</a></p></li>
+<li><p>Runness calculation methodology: See <a class="reference internal" href="#../src/calc_treasury_run_status.py"><span class="xref myst">src/calc_treasury_run_status.py</span></a></p></li>
+<li><p>Auction data pull methodology: See <a class="reference internal" href="#../src/pull_treasury_auction_stats.py"><span class="xref myst">src/pull_treasury_auction_stats.py</span></a></p></li>
+<li><p>Merge methodology: See <a class="reference internal" href="#../src/merge_auction_with_runness.py"><span class="xref myst">src/merge_auction_with_runness.py</span></a></p></li>
+</ul>
+</section>
+<section id="related-datasets">
+<h2>Related Datasets<a class="headerlink" href="#related-datasets" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>CRSP_TFZ_with_runness</strong>: For historical daily price data with runness</p></li>
+<li><p><strong>treasuries_with_run_status</strong>: Pure runness calculations by date, CUSIP, term, and type</p></li>
+<li><p><strong>treasury_auction_stats</strong>: Raw auction data without runness calculations</p></li>
+</ul>
+</section>
+<section id="dataframe-glimpse">
+<h2>DataFrame Glimpse<a class="headerlink" href="#dataframe-glimpse" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Rows: 2312
+Columns: 123
+$ cusip                                                       &lt;str&gt; &#39;912827KC5&#39;
+$ issueDate                                          &lt;datetime[ns]&gt; 1979-11-15 00:00:00
+$ securityType                                                &lt;str&gt; &#39;Note&#39;
+$ securityTerm                                                &lt;str&gt; &#39;10-Year&#39;
+$ maturityDate                                       &lt;datetime[ns]&gt; 1989-11-15 00:00:00
+$ interestRate                                                &lt;f64&gt; 10.75
+$ refCpiOnIssueDate                                           &lt;str&gt; &#39;&#39;
+$ refCpiOnDatedDate                                           &lt;str&gt; &#39;&#39;
+$ announcementDate                                   &lt;datetime[ns]&gt; 1979-10-24 00:00:00
+$ auctionDate                                        &lt;datetime[ns]&gt; 1979-10-31 00:00:00
+$ auctionDateYear                                             &lt;str&gt; &#39;1979&#39;
+$ datedDate                                          &lt;datetime[ns]&gt; 1979-11-15 00:00:00
+$ accruedInterestPer1000                                      &lt;f64&gt; 0.0
+$ accruedInterestPer100                                       &lt;f64&gt; null
+$ adjustedAccruedInterestPer1000                              &lt;f64&gt; null
+$ adjustedPrice                                               &lt;f64&gt; null
+$ allocationPercentage                                        &lt;f64&gt; 99.0
+$ allocationPercentageDecimals                                &lt;str&gt; &#39;0&#39;
+$ announcedCusip                                              &lt;str&gt; &#39;&#39;
+$ auctionFormat                                               &lt;str&gt; &#39;Multi-Price&#39;
+$ averageMedianDiscountRate                                   &lt;f64&gt; null
+$ averageMedianInvestmentRate                                 &lt;f64&gt; null
+$ averageMedianPrice                                          &lt;f64&gt; 100.0
+$ averageMedianDiscountMargin                                 &lt;str&gt; &#39;&#39;
+$ averageMedianYield                                          &lt;str&gt; &#39;10.750000&#39;
+$ backDated                                                  &lt;null&gt; null
+$ backDatedDate                                      &lt;datetime[ns]&gt; null
+$ bidToCoverRatio                                             &lt;f64&gt; null
+$ callDate                                           &lt;datetime[ns]&gt; null
+$ callable                                                   &lt;null&gt; null
+$ calledDate                                         &lt;datetime[ns]&gt; null
+$ cashManagementBillCMB                                      &lt;null&gt; null
+$ closingTimeCompetitive                                      &lt;str&gt; &#39;&#39;
+$ closingTimeNoncompetitive                                   &lt;str&gt; &#39;&#39;
+$ competitiveAccepted                                         &lt;str&gt; &#39;&#39;
+$ competitiveBidDecimals                                      &lt;str&gt; &#39;2&#39;
+$ competitiveTendered                                         &lt;str&gt; &#39;&#39;
+$ competitiveTendersAccepted                                  &lt;str&gt; &#39;&#39;
+$ corpusCusip                                                 &lt;str&gt; &#39;&#39;
+$ cpiBaseReferencePeriod                                      &lt;str&gt; &#39;&#39;
+$ currentlyOutstanding                                        &lt;str&gt; &#39;&#39;
+$ directBidderAccepted                                        &lt;str&gt; &#39;&#39;
+$ directBidderTendered                                        &lt;str&gt; &#39;&#39;
+$ estimatedAmountOfPubliclyHeldMaturingSecuritiesBy…          &lt;str&gt; &#39;&#39;
+$ fimaIncluded                                               &lt;null&gt; null
+$ fimaNoncompetitiveAccepted                                  &lt;str&gt; &#39;&#39;
+$ fimaNoncompetitiveTendered                                  &lt;str&gt; &#39;&#39;
+$ firstInterestPeriod                                         &lt;str&gt; &#39;Normal&#39;
+$ firstInterestPaymentDate                           &lt;datetime[ns]&gt; 1980-05-15 00:00:00
+$ floatingRate                                               &lt;null&gt; null
+$ frnIndexDeterminationDate                                   &lt;str&gt; &#39;&#39;
+$ frnIndexDeterminationRate                                   &lt;str&gt; &#39;&#39;
+$ highDiscountRate                                            &lt;str&gt; &#39;&#39;
+$ highInvestmentRate                                          &lt;str&gt; &#39;&#39;
+$ highPrice                                                   &lt;str&gt; &#39;99.759&#39;
+$ highDiscountMargin                                          &lt;str&gt; &#39;&#39;
+$ highYield                                                   &lt;str&gt; &#39;10.7900&#39;
+$ indexRatioOnIssueDate                                       &lt;str&gt; &#39;&#39;
+$ indirectBidderAccepted                                      &lt;str&gt; &#39;&#39;
+$ indirectBidderTendered                                      &lt;str&gt; &#39;&#39;
+$ interestPaymentFrequency                                    &lt;str&gt; &#39;Semi-Annual&#39;
+$ lowDiscountRate                                             &lt;str&gt; &#39;&#39;
+$ lowInvestmentRate                                           &lt;str&gt; &#39;&#39;
+$ lowPrice                                                    &lt;str&gt; &#39;100.303&#39;
+$ lowDiscountMargin                                           &lt;str&gt; &#39;&#39;
+$ lowYield                                                    &lt;str&gt; &#39;10.700000&#39;
+$ maturingDate                                       &lt;datetime[ns]&gt; null
+$ maximumCompetitiveAward                                     &lt;str&gt; &#39;&#39;
+$ maximumNoncompetitiveAward                                  &lt;str&gt; &#39;&#39;
+$ maximumSingleBid                                            &lt;str&gt; &#39;&#39;
+$ minimumBidAmount                                            &lt;str&gt; &#39;&#39;
+$ minimumStripAmount                                          &lt;str&gt; &#39;&#39;
+$ minimumToIssue                                              &lt;str&gt; &#39;&#39;
+$ multiplesToBid                                              &lt;str&gt; &#39;&#39;
+$ multiplesToIssue                                            &lt;str&gt; &#39;&#39;
+$ nlpExclusionAmount                                          &lt;str&gt; &#39;&#39;
+$ nlpReportingThreshold                                       &lt;str&gt; &#39;&#39;
+$ noncompetitiveAccepted                                      &lt;str&gt; &#39;&#39;
+$ noncompetitiveTendersAccepted                               &lt;str&gt; &#39;&#39;
+$ offeringAmount                                              &lt;str&gt; &#39;2000000000&#39;
+$ originalCusip                                               &lt;str&gt; &#39;&#39;
+$ originalDatedDate                                  &lt;datetime[ns]&gt; null
+$ originalIssueDate                                  &lt;datetime[ns]&gt; null
+$ originalSecurityTerm                                        &lt;str&gt; &#39;10-Year&#39;
+$ pdfFilenameAnnouncement                                     &lt;str&gt; &#39;&#39;
+$ pdfFilenameCompetitiveResults                               &lt;str&gt; &#39;&#39;
+$ pdfFilenameNoncompetitiveResults                            &lt;str&gt; &#39;&#39;
+$ pdfFilenameSpecialAnnouncement                              &lt;str&gt; &#39;&#39;
+$ pricePer100                                                 &lt;str&gt; &#39;&#39;
+$ primaryDealerAccepted                                       &lt;str&gt; &#39;&#39;
+$ primaryDealerTendered                                       &lt;str&gt; &#39;&#39;
+$ reopening                                                  &lt;null&gt; null
+$ securityTermDayMonth                                        &lt;str&gt; &#39;0-Month&#39;
+$ securityTermWeekYear                                        &lt;str&gt; &#39;10-Year&#39;
+$ series                                                      &lt;str&gt; &#39;B-1989&#39;
+$ somaAccepted                                                &lt;str&gt; &#39;&#39;
+$ somaHoldings                                                &lt;str&gt; &#39;&#39;
+$ somaIncluded                                               &lt;null&gt; null
+$ somaTendered                                                &lt;str&gt; &#39;&#39;
+$ spread                                                      &lt;str&gt; &#39;&#39;
+$ standardInterestPaymentPer1000                              &lt;str&gt; &#39;53.7500&#39;
+$ strippable                                                 &lt;null&gt; null
+$ term                                                        &lt;str&gt; &#39;10-Year&#39;
+$ tiinConversionFactorPer1000                                 &lt;str&gt; &#39;&#39;
+$ tips                                                       &lt;null&gt; null
+$ totalAccepted                                               &lt;f64&gt; 2401000000.0
+$ totalTendered                                               &lt;f64&gt; 3818000000.0
+$ treasuryRetailAccepted                                      &lt;str&gt; &#39;&#39;
+$ treasuryRetailTendersAccepted                               &lt;str&gt; &#39;&#39;
+$ type                                                        &lt;str&gt; &#39;Note&#39;
+$ unadjustedAccruedInterestPer1000                            &lt;str&gt; &#39;&#39;
+$ unadjustedPrice                                             &lt;str&gt; &#39;&#39;
+$ updatedTimestamp                                            &lt;str&gt; &#39;2024-01-09T10:27:11&#39;
+$ xmlFilenameAnnouncement                                     &lt;str&gt; &#39;&#39;
+$ xmlFilenameCompetitiveResults                               &lt;str&gt; &#39;&#39;
+$ xmlFilenameSpecialAnnouncement                              &lt;str&gt; &#39;&#39;
+$ tintCusip1                                                  &lt;str&gt; &#39;&#39;
+$ tintCusip2                                                  &lt;str&gt; &#39;&#39;
+$ tintCusip1DueDate                                  &lt;datetime[ns]&gt; null
+$ tintCusip2DueDate                                  &lt;datetime[ns]&gt; null
+$ run                                                         &lt;i64&gt; 0
+$ runness_term                                                &lt;str&gt; null
+$ runness_type                                                &lt;str&gt; null
+
+
+</pre></div>
+</div>
+</section>
+<section id="dataframe-manifest">
+<h2>Dataframe Manifest<a class="headerlink" href="#dataframe-manifest" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dataframe Name</p></th>
+<th class="head"><p>treasury_auctions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dataframe ID</p></td>
+<td><p><a class="reference internal" href="#../dataframes/crsp_treasury/treasury_auctions.md"><span class="xref myst">treasury_auctions</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Sources</p></td>
+<td><p>treasury_auction_stats</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Providers</p></td>
+<td><p>TreasuryDirect</p></td>
+</tr>
+<tr class="row-odd"><td><p>Links to Providers</p></td>
+<td><p><a class="reference external" href="https://treasurydirect.gov/TA_WS/securities/jqsearch">https://treasurydirect.gov/TA_WS/securities/jqsearch</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Topic Tags</p></td>
+<td><p>Treasuries, Auctions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type of Data Access</p></td>
+<td><p>Web API</p></td>
+</tr>
+<tr class="row-even"><td><p>How is data pulled?</p></td>
+<td><p>TreasuryDirect Web API, runness calculated from auction data and merged by CUSIP and auction date</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data available up to (min)</p></td>
+<td><p>1984-11-08 00:00:00</p></td>
+</tr>
+<tr class="row-even"><td><p>Data available up to (max)</p></td>
+<td><p>2026-02-18 00:00:00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dataframe Path</p></td>
+<td><p>/Users/jbejarano/GitRepositories/ftsfr_repos/crsp_treasury/_data/treasury_auctions.parquet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Linked Charts:</strong></p>
+<ul class="simple">
+<li><p>None</p></li>
+</ul>
+</section>
+<section id="pipeline-manifest">
+<h2>Pipeline Manifest<a class="headerlink" href="#pipeline-manifest" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>CRSP Treasury</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="../../../index.html"><span class="std std-doc">crsp_treasury</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/crsp_treasury">ftsfr/crsp_treasury</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/crsp_treasury/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-07-09 20:46:16</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="crsp_treasury_daily.html"><span class="std std-doc">crsp_treasury:crsp_treasury_daily</span></a><br>  <a class="reference internal" href="#"><span class="std std-doc">crsp_treasury:treasury_auctions</span></a><br>  <a class="reference internal" href="ftsfr_treas_bond_portfolio_returns.html"><span class="std std-doc">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ftsfr_treas_bond_portfolio_returns.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></code> - ftsfr_treas_bond_portfolio_returns</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-advantages">Key Advantages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-auction-process">Treasury Auction Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-the-auction-process">Steps in the Auction Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metrics-and-their-importance">Key Metrics and Their Importance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dictionary">Data Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-identification-and-characteristics">1. Security Identification and Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cusip">cusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#announcedcusip">announcedCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originalcusip">originalCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytype">securityType</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securityterm">securityTerm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#term">term</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#type">type</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytermdaymonth">securityTermDayMonth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securitytermweekyear">securityTermWeekYear</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originalsecurityterm">originalSecurityTerm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interestrate">interestRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">tips</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callable">callable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strippable">strippable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reopening">reopening</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#series">series</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-dates-and-timeline">2. Auction Dates and Timeline</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#announcementdate">announcementDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctiondate">auctionDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctiondateyear">auctionDateYear</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#issuedate">issueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maturitydate">maturityDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dateddate">datedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#originaldateddate">originalDatedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#firstinterestpaymentdate">firstInterestPaymentDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maturingdate">maturingDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calldate">callDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calleddate">calledDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backdateddate">backDatedDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runness-indicator">3. Runness Indicator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run">run</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-metrics">4. Auction Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bidtocoverratio">bidToCoverRatio</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#totaltendered">totalTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#totalaccepted">totalAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#offeringamount">offeringAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allocationpercentage">allocationPercentage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allocationpercentagedecimals">allocationPercentageDecimals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-rates-and-pricing">5. Interest Rates and Pricing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianprice">averageMedianPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highprice">highPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowprice">lowPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustedprice">adjustedPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unadjustedprice">unadjustedPrice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#priceper100">pricePer100</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianyield">averageMedianYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highyield">highYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowyield">lowYield</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemediandiscountrate">averageMedianDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highdiscountrate">highDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowdiscountrate">lowDiscountRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemedianinvestmentrate">averageMedianInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highinvestmentrate">highInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowinvestmentrate">lowInvestmentRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#averagemediandiscountmargin">averageMedianDiscountMargin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#highdiscountmargin">highDiscountMargin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lowdiscountmargin">lowDiscountMargin</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bidder-participation">6. Bidder Participation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivetendered">competitiveTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitiveaccepted">competitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivetendersaccepted">competitiveTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noncompetitiveaccepted">noncompetitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noncompetitivetendersaccepted">noncompetitiveTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primarydealertendered">primaryDealerTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primarydealeraccepted">primaryDealerAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#directbiddertendered">directBidderTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#directbidderaccepted">directBidderAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indirectbiddertendered">indirectBidderTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indirectbidderaccepted">indirectBidderAccepted</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-reserve-participation-soma">7. Federal Reserve Participation (SOMA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaincluded">somaIncluded</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somatendered">somaTendered</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaaccepted">somaAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somaholdings">somaHoldings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-and-international-participation">8. Foreign and International Participation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimaincluded">fimaIncluded</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimanoncompetitiveaccepted">fimaNoncompetitiveAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fimanoncompetitivetendered">fimaNoncompetitiveTendered</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outstanding-amounts-and-issue-size">9. Outstanding Amounts and Issue Size</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#currentlyoutstanding">currentlyOutstanding</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#estimatedamountofpubliclyheldmaturingsecuritiesbytype">estimatedAmountOfPubliclyHeldMaturingSecuritiesByType</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-retail-and-special-programs">10. Treasury Retail and Special Programs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treasuryretailtendersaccepted">treasuryRetailTendersAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#treasuryretailaccepted">treasuryRetailAccepted</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cashmanagementbillcmb">cashManagementBillCMB</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accrued-interest-and-index-adjustments">11. Accrued Interest and Index Adjustments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accruedinterestper100">accruedInterestPer100</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accruedinterestper1000">accruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjustedaccruedinterestper1000">adjustedAccruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unadjustedaccruedinterestper1000">unadjustedAccruedInterestPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardinterestpaymentper1000">standardInterestPaymentPer1000</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-specific-fields">12. TIPS-Specific Fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refcpionissuedate">refCpiOnIssueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refcpiondateddate">refCpiOnDatedDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cpibasereferenceperiod">cpiBaseReferencePeriod</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexratioonissuedate">indexRatioOnIssueDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-rate-notes-frn-specific-fields">13. Floating Rate Notes (FRN) Specific Fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#floatingrate">floatingRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frnindexdeterminationdate">frnIndexDeterminationDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frnindexdeterminationrate">frnIndexDeterminationRate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spread">spread</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-rules-and-parameters">14. Auction Rules and Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumbidamount">minimumBidAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumstripamount">minimumStripAmount</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimumtoissue">minimumToIssue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplestobid">multiplesToBid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplestoissue">multiplesToIssue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumcompetitiveaward">maximumCompetitiveAward</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumnoncompetitiveaward">maximumNoncompetitiveAward</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maximumsinglebid">maximumSingleBid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#competitivebiddecimals">competitiveBidDecimals</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#closingtimecompetitive">closingTimeCompetitive</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#closingtimenoncompetitive">closingTimeNoncompetitive</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#net-long-position-nlp-reporting">15. Net Long Position (NLP) Reporting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nlpreportingthreshold">nlpReportingThreshold</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nlpexclusionamount">nlpExclusionAmount</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-format-and-type">16. Auction Format and Type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auctionformat">auctionFormat</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backdated">backDated</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-payment-details">17. Interest Payment Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interestpaymentfrequency">interestPaymentFrequency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#firstinterestperiod">firstInterestPeriod</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strips-and-conversion-factors">18. STRIPS and Conversion Factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#corpuscusip">corpusCusip</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tiinconversionfactorper1000">tiinConversionFactorPer1000</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip1">tintCusip1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip2">tintCusip2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip1duedate">tintCusip1DueDate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tintcusip2duedate">tintCusip2DueDate</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-references">19. Documentation References</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenameannouncement">pdfFilenameAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamecompetitiveresults">pdfFilenameCompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamenoncompetitiveresults">pdfFilenameNoncompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdffilenamespecialannouncement">pdfFilenameSpecialAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenameannouncement">xmlFilenameAnnouncement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenamecompetitiveresults">xmlFilenameCompetitiveResults</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xmlfilenamespecialannouncement">xmlFilenameSpecialAnnouncement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-update-information">20. Data Update Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updatedtimestamp">updatedTimestamp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-crsp-tfz-with-runness">Comparison with CRSP_TFZ_with_runness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-notes">Data Quality Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-use-cases">Analytical Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-analysis">1. Demand Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-performance">2. Auction Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#market-behavior-and-investor-classes">3. Market Behavior and Investor Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federal-reserve-policy-impact">4. Federal Reserve Policy Impact</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#yield-and-term-structure">5. Yield and Term Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inflation-expectations">6. Inflation Expectations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-demand">7. Foreign Demand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-run-liquidity-premium">8. On-the-Run Liquidity Premium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-helper-function">Using the helper function:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-loading">Direct loading:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-statistics">Dataset Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-datasets">Related Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-glimpse">DataFrame Glimpse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-manifest">Dataframe Manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-manifest">Pipeline Manifest</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeremy Bejarano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jeremy Bejarano.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

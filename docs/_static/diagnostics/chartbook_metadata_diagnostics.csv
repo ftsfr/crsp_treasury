@@ -1,0 +1,7 @@
+Name,Metadata Complete,Object Type,Identifier,Pipeline,Missing Fields,Page Link
+CRSP Treasury,False,pipeline,crsp_treasury,crsp_treasury,"build_commands, os_compatibility",../index.html
+crsp_treasury_daily,False,dataframe,crsp_treasury_daily,crsp_treasury,links_to_data_providers,./dataframes/crsp_treasury/crsp_treasury_daily.html
+treasury_auctions,True,dataframe,treasury_auctions,crsp_treasury,,./dataframes/crsp_treasury/treasury_auctions.html
+ftsfr_treas_bond_portfolio_returns,True,dataframe,ftsfr_treas_bond_portfolio_returns,crsp_treasury,,./dataframes/crsp_treasury/ftsfr_treas_bond_portfolio_returns.html
+Treasury Bond Portfolio Returns,False,chart,treasury_returns_replication,crsp_treasury,"data_frequency, observation_period, lag_in_data_release, data_release_timing, units",./charts/crsp_treasury.treasury_returns_replication.html
+Treasury Bond Portfolio Cumulative Returns,False,chart,treasury_cumulative_returns,crsp_treasury,"data_frequency, observation_period, lag_in_data_release, data_release_timing, units",./charts/crsp_treasury.treasury_cumulative_returns.html

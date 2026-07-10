@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dataframe: crsp_treasury:crsp_treasury_daily - crsp_treasury_daily &#8212; CRSP Treasury</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=206a6f58" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=b9472d72"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cb/dataframes/crsp_treasury/crsp_treasury_daily';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Dataframe: crsp_treasury:ftsfr_treas_bond_portfolio_returns - ftsfr_treas_bond_portfolio_returns" href="ftsfr_treas_bond_portfolio_returns.html" />
+    <link rel="prev" title="Chart List" href="../../charts.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>   
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="CRSP Treasury - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="CRSP Treasury - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    CRSP Treasury
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks 📖</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/crsp_treasury/summary_treasury_bond_returns_ipynb.html">Cleaning Summary: Treasury Bond Returns</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pipeline Charts 📈</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../charts.html">Chart List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pipeline Dataframes 📊</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:crsp_treasury_daily</span></code> - crsp_treasury_daily</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ftsfr_treas_bond_portfolio_returns.html">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></code> - ftsfr_treas_bond_portfolio_returns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="treasury_auctions.html">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:treasury_auctions</span></code> - treasury_auctions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__category">
+  <h3>
+    <a href="../../charts/index/category.html">Categories</a>
+  </h3>
+  <ul>
+     
+    <li>
+      <a href="../../charts/index/category/bonds.html">Bonds (2)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/cumulative-returns.html">Cumulative Returns (1)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/replication.html">Replication (2)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/returns.html">Returns (1)</a>
+    </li>
+      
+    <li>
+      <a href="../../charts/index/category/treasury.html">Treasury (2)</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+        <div class="sidebar-primary-item">
+<div class="ablog-sidebar-item ablog__tags">
+  <link
+    rel="stylesheet"
+    href="../../../_static/ablog/tagcloud.css"
+    type="text/css"
+  />
+  <h3><a href="../../charts/index/tag.html">Tags</a></h3>
+  <ul class="ablog-cloud">
+     
+    <li class="ablog-cloud ablog-cloud-3">
+      <a href="../../charts/index/tag/crsp-treasury-database.html">CRSP Treasury Database</a>
+    </li>
+     
+  </ul>
+</div>
+</div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/cb/dataframes/crsp_treasury/crsp_treasury_daily.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dataframe: crsp_treasury:crsp_treasury_daily - crsp_treasury_daily</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-note-on-data-lag">Important Note on Data Lag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-columns">Main Columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifiers">Identifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kytreasno">kytreasno</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kycrspid">kycrspid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tcusip">tcusip</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-dates">Key Dates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caldt">caldt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdatdt">tdatdt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tmatdt">tmatdt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tfcaldt">tfcaldt</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prices-and-yields">Prices and Yields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdbid">tdbid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdask">tdask</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#price-dirty">price_dirty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdaccint">tdaccint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdyld">tdyld</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-model-implied-values">GSW Model-Implied Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-price-dirty">gsw_price_dirty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-price-clean">gsw_price_clean</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-ytm">gsw_ytm</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-characteristics">Security Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tcouprt">tcouprt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#itype">itype</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callable">callable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#original-maturity">original_maturity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#years-to-maturity">years_to_maturity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#days-to-maturity">days_to_maturity</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-and-return-measures">Risk and Return Measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdduratn">tdduratn</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdretnua">tdretnua</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outstanding-amounts">Outstanding Amounts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdpubout">tdpubout</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdtotout">tdtotout</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdpdint">tdpdint</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runness-and-auction-data">Runness and Auction Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run">run</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-term">auction_term</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-type">auction_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-on-the-run-vs-off-the-run-analysis">1. Historical On-the-Run vs Off-the-Run Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-returns-calculation">2. Treasury Returns Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duration-analysis-by-runness">3. Duration Analysis by Runness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#price-discovery-and-liquidity">4. Price Discovery and Liquidity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-model-implied-price-analysis">5. GSW Model-Implied Price Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-structure-analysis">6. Term Structure Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-treasury-auction-with-runness">Comparison with treasury_auction_with_runness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-notes">Data Quality Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-helper-function">Using the helper function:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-loading">Direct loading:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-without-runness-for-comparison">Loading without runness (for comparison):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-summary-table">Column Summary Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-statistics">Dataset Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-datasets">Related Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-glimpse">DataFrame Glimpse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-manifest">Dataframe Manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-manifest">Pipeline Manifest</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                   <section class="tex2jax_ignore mathjax_ignore" id="dataframe-crsp-treasury-crsp-treasury-daily-crsp-treasury-daily">
+<h1>Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:crsp_treasury_daily</span></code> - crsp_treasury_daily<a class="headerlink" href="#dataframe-crsp-treasury-crsp-treasury-daily-crsp-treasury-daily" title="Link to this heading">#</a></h1>
+<p>CRSP Treasury Data with Runness</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This dataset combines comprehensive U.S. Treasury daily price and yield data from CRSP (Center for Research in Security Prices) with auction-based runness calculations. It provides a complete historical time series of Treasury securities with accurate on-the-run vs off-the-run classification.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Historical Depth</strong>: Daily data from 1970 to present (2.5+ million observations)</p></li>
+<li><p><strong>Comprehensive Coverage</strong>: Notes and Bonds with complete price, yield, and duration data</p></li>
+<li><p><strong>Accurate Runness</strong>: Calculated from actual auction data, grouped by security type and standard auction terms</p></li>
+<li><p><strong>Daily Time Series</strong>: Bid/ask prices, yields, duration, returns, and accrued interest</p></li>
+<li><p><strong>GSW Model-Implied Pricing</strong>: Model-implied dirty/clean prices and YTM from the Fed’s published Svensson yield curve parameters</p></li>
+</ul>
+</section>
+<section id="data-sources">
+<h2>Data Sources<a class="headerlink" href="#data-sources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Primary</strong>: CRSP Treasury Database via WRDS (Wharton Research Data Services)</p></li>
+<li><p><strong>Runness Enhancement</strong>: <a class="reference external" href="http://TreasuryDirect.gov">TreasuryDirect.gov</a> auction data merged by CUSIP and date</p></li>
+<li><p><strong>GSW Pricing</strong>: Federal Reserve published Svensson yield curve parameters (feds200628.csv)</p></li>
+<li><p><strong>Merge Strategy</strong>: Left join CRSP data with auction-based runness calculations; left join GSW model-implied prices</p></li>
+</ul>
+</section>
+<section id="important-note-on-data-lag">
+<h2>Important Note on Data Lag<a class="headerlink" href="#important-note-on-data-lag" title="Link to this heading">#</a></h2>
+<p><strong>CRSP data may have a lag of several weeks to months</strong> depending on when CRSP updates their database. For analysis requiring the most current data, use the <code class="docutils literal notranslate"><span class="pre">treasury_auction_with_runness</span></code> dataset instead, which is updated very frequently with minimal lag.</p>
+</section>
+<section id="main-columns">
+<h2>Main Columns<a class="headerlink" href="#main-columns" title="Link to this heading">#</a></h2>
+<section id="identifiers">
+<h3>Identifiers<a class="headerlink" href="#identifiers" title="Link to this heading">#</a></h3>
+<section id="kytreasno">
+<h4>kytreasno<a class="headerlink" href="#kytreasno" title="Link to this heading">#</a></h4>
+<p><strong>Treasury Record Identifier</strong></p>
+<ul class="simple">
+<li><p>CRSP’s unique treasury issue identifier</p></li>
+<li><p>Primary key in CRSPAccess database</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="kycrspid">
+<h4>kycrspid<a class="headerlink" href="#kycrspid" title="Link to this heading">#</a></h4>
+<p><strong>CRSP-Assigned Unique ID (String Format)</strong></p>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">YYYYMMDD.TCCCCE</span></code> where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">YYYYMMDD</span></code> = Maturity Year, Month, and Day (tmatdt)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> = Type of Issue (itype)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CCCC</span></code> = Integer part of Coupon Rate (tcouprt) × 100</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> = Uniqueness Number (iuniq)</p></li>
+</ul>
+</li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">19850515.504250</span></code> identifies a 4¼% callable bond which matured on May 15, 1985</p></li>
+<li><p>Type: string</p></li>
+<li><p>Note: CRSP recommends using the underlying variables (tmatdt, itype, tcouprt) rather than parsing this composite ID</p></li>
+</ul>
+</section>
+<section id="tcusip">
+<h4>tcusip<a class="headerlink" href="#tcusip" title="Link to this heading">#</a></h4>
+<p><strong>Treasury CUSIP</strong></p>
+<ul class="simple">
+<li><p>Committee on Uniform Security Identification Procedures number</p></li>
+<li><p>9-character unique security identifier</p></li>
+<li><p>CUSIP assignment began in 1968</p></li>
+<li><p>Issues that matured prior to 1968 are assigned <code class="docutils literal notranslate"><span class="pre">OXX</span></code></p></li>
+<li><p>Earliest maturity with CUSIP: February 15, 1969</p></li>
+<li><p>Type: object (string)</p></li>
+</ul>
+</section>
+</section>
+<section id="key-dates">
+<h3>Key Dates<a class="headerlink" href="#key-dates" title="Link to this heading">#</a></h3>
+<section id="caldt">
+<h4>caldt<a class="headerlink" href="#caldt" title="Link to this heading">#</a></h4>
+<p><strong>Quotation Date</strong></p>
+<ul class="simple">
+<li><p>Date associated with the daily quotation</p></li>
+<li><p>Main time series index</p></li>
+<li><p>Type: datetime64[ns]</p></li>
+<li><p>Range: 1970-01-02 to 2025-09-30</p></li>
+</ul>
+</section>
+<section id="tdatdt">
+<h4>tdatdt<a class="headerlink" href="#tdatdt" title="Link to this heading">#</a></h4>
+<p><strong>Date Dated by Treasury</strong></p>
+<ul class="simple">
+<li><p>Date from which coupon issues begin accruing interest</p></li>
+<li><p>May result in modified first coupon payment if not a regular interest payment date</p></li>
+<li><p>Missing if not available or not applicable</p></li>
+<li><p>Type: datetime64[ns]</p></li>
+</ul>
+</section>
+<section id="tmatdt">
+<h4>tmatdt<a class="headerlink" href="#tmatdt" title="Link to this heading">#</a></h4>
+<p><strong>Maturity Date at Time of Issue</strong></p>
+<ul class="simple">
+<li><p>Original maturity date for all securities</p></li>
+<li><p>For consol bonds: set to 2099-04-01</p></li>
+<li><p>Type: datetime64[ns]</p></li>
+</ul>
+</section>
+<section id="tfcaldt">
+<h4>tfcaldt<a class="headerlink" href="#tfcaldt" title="Link to this heading">#</a></h4>
+<p><strong>First Eligible Call Date</strong></p>
+<ul class="simple">
+<li><p>First eligible call date at time of issue</p></li>
+<li><p>All interest payment dates beginning with tfcaldt are possible call dates</p></li>
+<li><p>Missing if the issue is not callable</p></li>
+<li><p>Type: datetime64[ns]</p></li>
+</ul>
+</section>
+</section>
+<section id="prices-and-yields">
+<h3>Prices and Yields<a class="headerlink" href="#prices-and-yields" title="Link to this heading">#</a></h3>
+<section id="tdbid">
+<h4>tdbid<a class="headerlink" href="#tdbid" title="Link to this heading">#</a></h4>
+<p><strong>Daily Bid Price</strong></p>
+<ul class="simple">
+<li><p>Daily bid price per $100 face value</p></li>
+<li><p>Set to zero for missing values</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="tdask">
+<h4>tdask<a class="headerlink" href="#tdask" title="Link to this heading">#</a></h4>
+<p><strong>Daily Ask Price</strong></p>
+<ul class="simple">
+<li><p>Daily ask price per $100 face value</p></li>
+<li><p>Set to zero for missing values</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="price-dirty">
+<h4>price_dirty<a class="headerlink" href="#price-dirty" title="Link to this heading">#</a></h4>
+<p><strong>Dirty Price (Full Price)</strong></p>
+<ul class="simple">
+<li><p>Clean price plus accrued interest</p></li>
+<li><p>Calculated as: (tdbid + tdask)/2 + tdaccint</p></li>
+<li><p>Represents the actual price paid by buyer</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="tdaccint">
+<h4>tdaccint<a class="headerlink" href="#tdaccint" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Total Accrued Interest</strong></p>
+<ul class="simple">
+<li><p>Calculated based on days between interest payment dates</p></li>
+<li><p>Represents accrued interest per $100 face value</p></li>
+<li><p>Computed from last payment date (or dated date for first coupon) to quotation date</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="tdyld">
+<h4>tdyld<a class="headerlink" href="#tdyld" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Promised Yield (Yield to Maturity)</strong></p>
+<ul class="simple">
+<li><p>Also called yield to maturity</p></li>
+<li><p>Single interest rate that equates present value of future cash flows to full price</p></li>
+<li><p>Full price = nominal price + accrued interest</p></li>
+<li><p>Set to -99 if price is missing</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+</section>
+<section id="gsw-model-implied-values">
+<h3>GSW Model-Implied Values<a class="headerlink" href="#gsw-model-implied-values" title="Link to this heading">#</a></h3>
+<section id="gsw-price-dirty">
+<h4>gsw_price_dirty<a class="headerlink" href="#gsw-price-dirty" title="Link to this heading">#</a></h4>
+<p><strong>GSW Model-Implied Dirty Price</strong></p>
+<ul class="simple">
+<li><p>Present discounted value of all future cashflows using the Fed’s published Svensson (Nelson-Siegel-Svensson) yield curve parameters</p></li>
+<li><p>Calculated as: <code class="docutils literal notranslate"><span class="pre">cashflows</span> <span class="pre">&#64;</span> <span class="pre">discount_factors</span></code> where discount factors <code class="docutils literal notranslate"><span class="pre">d(t)</span> <span class="pre">=</span> <span class="pre">exp(-y(t)</span> <span class="pre">*</span> <span class="pre">t)</span></code> come from the Svensson model</p></li>
+<li><p>Svensson parameters (BETA0-3, TAU1-2) are published daily by the Federal Reserve</p></li>
+<li><p>NaN for callable bonds, T-bills, and dates without Fed yield curve parameters</p></li>
+<li><p>Type: Float64</p></li>
+<li><p>Reference: Gurkaynak, Sack, and Wright (2007)</p></li>
+</ul>
+</section>
+<section id="gsw-price-clean">
+<h4>gsw_price_clean<a class="headerlink" href="#gsw-price-clean" title="Link to this heading">#</a></h4>
+<p><strong>GSW Model-Implied Clean Price</strong></p>
+<ul class="simple">
+<li><p>GSW dirty price minus accrued interest</p></li>
+<li><p>Calculated as: <code class="docutils literal notranslate"><span class="pre">gsw_price_dirty</span> <span class="pre">-</span> <span class="pre">tdaccint</span></code></p></li>
+<li><p>NaN when gsw_price_dirty is NaN</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="gsw-ytm">
+<h4>gsw_ytm<a class="headerlink" href="#gsw-ytm" title="Link to this heading">#</a></h4>
+<p><strong>GSW Model-Implied Yield to Maturity</strong></p>
+<ul class="simple">
+<li><p>Bond-equivalent yield implied by the GSW dirty price</p></li>
+<li><p>Semiannual compounding convention (matches CRSP <code class="docutils literal notranslate"><span class="pre">tdyld</span></code>)</p></li>
+<li><p>Solved via root-finding: the yield <code class="docutils literal notranslate"><span class="pre">y</span></code> such that <code class="docutils literal notranslate"><span class="pre">sum(CF_j</span> <span class="pre">/</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">y/2)^(2*t_j))</span> <span class="pre">=</span> <span class="pre">gsw_price_dirty</span></code></p></li>
+<li><p>NaN when gsw_price_dirty is NaN</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+</section>
+<section id="security-characteristics">
+<h3>Security Characteristics<a class="headerlink" href="#security-characteristics" title="Link to this heading">#</a></h3>
+<section id="tcouprt">
+<h4>tcouprt<a class="headerlink" href="#tcouprt" title="Link to this heading">#</a></h4>
+<p><strong>Coupon Rate</strong></p>
+<ul class="simple">
+<li><p>Annual rate of interest stated on the face of the security</p></li>
+<li><p>Expressed as a percent</p></li>
+<li><p>Example: 4.0 = 4% annual coupon</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="itype">
+<h4>itype<a class="headerlink" href="#itype" title="Link to this heading">#</a></h4>
+<p><strong>Type of Issue</strong></p>
+<ul class="simple">
+<li><p>Code indicating security type:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = Noncallable bond</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = Noncallable note</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> = Certificate of indebtedness</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code> = Treasury Bill</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span></code> = Callable bond</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">6</span></code> = Callable note</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span></code> = Tax Anticipation Certificate of Indebtedness</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span></code> = Tax Anticipation Bill</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code> = Other, flags issues with unusual provisions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code> = Reserved for future use</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code> = Inflation-Adjusted Bonds (TIPS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">12</span></code> = Inflation-Adjusted Notes (TIPS)</p></li>
+</ul>
+</li>
+<li><p>Type: Float64</p></li>
+<li><p>Distribution in current dataset:</p>
+<ul>
+<li><p>Type 1 (Noncallable Bond): 633,159 observations</p></li>
+<li><p>Type 2 (Noncallable Note): 1,875,756 observations</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="callable">
+<h4>callable<a class="headerlink" href="#callable" title="Link to this heading">#</a></h4>
+<p><strong>Callable Flag</strong></p>
+<ul class="simple">
+<li><p>Boolean indicating if the security is callable</p></li>
+<li><p>True = Security can be called before maturity</p></li>
+<li><p>False = Security cannot be called</p></li>
+<li><p>Type: bool</p></li>
+<li><p>Note: All securities in current dataset are non-callable (callable=False)</p></li>
+</ul>
+</section>
+<section id="original-maturity">
+<h4>original_maturity<a class="headerlink" href="#original-maturity" title="Link to this heading">#</a></h4>
+<p><strong>Original Maturity (Years)</strong></p>
+<ul class="simple">
+<li><p>Time from issue date to maturity in years</p></li>
+<li><p>Calculated as (tmatdt - tdatdt) / 365.25</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="years-to-maturity">
+<h4>years_to_maturity<a class="headerlink" href="#years-to-maturity" title="Link to this heading">#</a></h4>
+<p><strong>Years to Maturity</strong></p>
+<ul class="simple">
+<li><p>Time from quotation date to maturity in years</p></li>
+<li><p>Calculated as (tmatdt - caldt) / 365.25</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="days-to-maturity">
+<h4>days_to_maturity<a class="headerlink" href="#days-to-maturity" title="Link to this heading">#</a></h4>
+<p><strong>Days to Maturity</strong></p>
+<ul class="simple">
+<li><p>Integer number of days from quotation date to maturity</p></li>
+<li><p>Calculated as (tmatdt - caldt).days</p></li>
+<li><p>Type: int64</p></li>
+</ul>
+</section>
+</section>
+<section id="risk-and-return-measures">
+<h3>Risk and Return Measures<a class="headerlink" href="#risk-and-return-measures" title="Link to this heading">#</a></h3>
+<section id="tdduratn">
+<h4>tdduratn<a class="headerlink" href="#tdduratn" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Macaulay’s Duration</strong></p>
+<ul class="simple">
+<li><p>Weighted average number of days until cash flows occur</p></li>
+<li><p>Present values (discounted by yield to maturity) of each payment used as weights</p></li>
+<li><p>For securities with only single payment at maturity (including bills): duration equals days to maturity</p></li>
+<li><p>Missing values: -1 (or -99 for TIPS)</p></li>
+<li><p>Type: Float64</p></li>
+<li><p>Reference: Macaulay, F.R. (1938). “Some Theoretical Problems of Interest Rates, Bond Yields and Stock Prices in the United States Since 1856.” NBER.</p></li>
+</ul>
+</section>
+<section id="tdretnua">
+<h4>tdretnua<a class="headerlink" href="#tdretnua" title="Link to this heading">#</a></h4>
+<p><strong>Daily Unadjusted Return</strong></p>
+<ul class="simple">
+<li><p>Calculated as: (Price change + Accrued interest + Paid interest) / (Previous day’s price + accrued interest)</p></li>
+<li><p>Formula: <code class="docutils literal notranslate"><span class="pre">(Price_t</span> <span class="pre">+</span> <span class="pre">AccInt_t</span> <span class="pre">+</span> <span class="pre">PaidInt_t)</span> <span class="pre">/</span> <span class="pre">(Price_{t-1}</span> <span class="pre">+</span> <span class="pre">AccInt_{t-1})</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+<li><p>Set to -99 when price is missing for current or previous day</p></li>
+<li><p>For bills: tdpdint and tdaccint are always zero, simplifying to price return only</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+</section>
+<section id="outstanding-amounts">
+<h3>Outstanding Amounts<a class="headerlink" href="#outstanding-amounts" title="Link to this heading">#</a></h3>
+<section id="tdpubout">
+<h4>tdpubout<a class="headerlink" href="#tdpubout" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Publicly Held Outstanding</strong></p>
+<ul class="simple">
+<li><p>Amount (face value) held by the public in millions of dollars</p></li>
+<li><p>Derived from monthly series tmpubout</p></li>
+<li><p>Missing when unavailable</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="tdtotout">
+<h4>tdtotout<a class="headerlink" href="#tdtotout" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Total Amount Outstanding</strong></p>
+<ul class="simple">
+<li><p>Total amount (face value) issued and still outstanding</p></li>
+<li><p>Expressed in millions of dollars</p></li>
+<li><p>Derived from monthly series tmtotout</p></li>
+<li><p>Missing when unavailable</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+<section id="tdpdint">
+<h4>tdpdint<a class="headerlink" href="#tdpdint" title="Link to this heading">#</a></h4>
+<p><strong>Daily Series of Paid Interest</strong></p>
+<ul class="simple">
+<li><p>Coupon interest paid since previous trading day</p></li>
+<li><p>Always zero for non-coupon issues</p></li>
+<li><p>Almost always zero for coupon issues (non-zero only on payment dates)</p></li>
+<li><p>Type: Float64</p></li>
+</ul>
+</section>
+</section>
+<section id="runness-and-auction-data">
+<h3>Runness and Auction Data<a class="headerlink" href="#runness-and-auction-data" title="Link to this heading">#</a></h3>
+<section id="run">
+<h4>run<a class="headerlink" href="#run" title="Link to this heading">#</a></h4>
+<p><strong>Runness Indicator</strong></p>
+<ul class="simple">
+<li><p>Indicates how recently the security was issued relative to others in its auction series</p></li>
+<li><p>Values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> = On-the-run (most recently issued for this term)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = First off-the-run</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> = Second off-the-run</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+<li><p>Type: int64</p></li>
+<li><p>Calculated from auction data grouped by:</p>
+<ul>
+<li><p>Security type (Note vs Bond)</p></li>
+<li><p>Standard auction terms (2Y, 3Y, 5Y, 7Y, 10Y, 20Y, 30Y)</p></li>
+</ul>
+</li>
+<li><p>Securities without auction match are assigned run=0 (conservative default)</p></li>
+</ul>
+</section>
+<section id="auction-term">
+<h4>auction_term<a class="headerlink" href="#auction-term" title="Link to this heading">#</a></h4>
+<p><strong>Auction Term Designation</strong></p>
+<ul class="simple">
+<li><p>Standard auction term used for runness calculation</p></li>
+<li><p>Values: “2-Year”, “3-Year”, “5-Year”, “7-Year”, “10-Year”, “20-Year”, “30-Year”</p></li>
+<li><p>Type: object (string)</p></li>
+<li><p>Missing for securities without auction data match</p></li>
+</ul>
+</section>
+<section id="auction-type">
+<h4>auction_type<a class="headerlink" href="#auction-type" title="Link to this heading">#</a></h4>
+<p><strong>Auction Security Type</strong></p>
+<ul class="simple">
+<li><p>Security type from auction data: “Note” or “Bond”</p></li>
+<li><p>Used in runness calculation grouping</p></li>
+<li><p>Type: object (string)</p></li>
+<li><p>Missing for securities without auction data match</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h2>
+<section id="historical-on-the-run-vs-off-the-run-analysis">
+<h3>1. Historical On-the-Run vs Off-the-Run Analysis<a class="headerlink" href="#historical-on-the-run-vs-off-the-run-analysis" title="Link to this heading">#</a></h3>
+<p>Study yield spreads and liquidity differences between on-the-run and off-the-run securities:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">chartbook</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">chartbook</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_project_root</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;_data&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;CRSP_TFZ_with_runness.parquet&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compare yields for 10-year notes</span>
+<span class="n">df_10y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;auction_term&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;10-Year&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;caldt&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2020-01-01&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Calculate on-the-run vs off-the-run yield spread</span>
+<span class="n">otr_yields</span> <span class="o">=</span> <span class="n">df_10y</span><span class="p">[</span><span class="n">df_10y</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;caldt&#39;</span><span class="p">)[</span><span class="s1">&#39;tdyld&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">off1_yields</span> <span class="o">=</span> <span class="n">df_10y</span><span class="p">[</span><span class="n">df_10y</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;caldt&#39;</span><span class="p">)[</span><span class="s1">&#39;tdyld&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">spread</span> <span class="o">=</span> <span class="n">off1_yields</span> <span class="o">-</span> <span class="n">otr_yields</span>
+</pre></div>
+</div>
+</section>
+<section id="treasury-returns-calculation">
+<h3>2. Treasury Returns Calculation<a class="headerlink" href="#treasury-returns-calculation" title="Link to this heading">#</a></h3>
+<p>Calculate holding period returns for different runness categories:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate returns for on-the-run vs off-the-run</span>
+<span class="n">returns_by_run</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;caldt&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">])[</span><span class="s1">&#39;tdretnua&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+
+<span class="c1"># Analyze return differences</span>
+<span class="n">return_spread</span> <span class="o">=</span> <span class="n">returns_by_run</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">returns_by_run</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Off-the-run minus on-the-run</span>
+</pre></div>
+</div>
+</section>
+<section id="duration-analysis-by-runness">
+<h3>3. Duration Analysis by Runness<a class="headerlink" href="#duration-analysis-by-runness" title="Link to this heading">#</a></h3>
+<p>Examine if duration characteristics differ by runness:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Duration statistics by runness and term</span>
+<span class="n">duration_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;auction_term&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;tdduratn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;years_to_maturity&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="price-discovery-and-liquidity">
+<h3>4. Price Discovery and Liquidity<a class="headerlink" href="#price-discovery-and-liquidity" title="Link to this heading">#</a></h3>
+<p>Study bid-ask spreads as proxy for liquidity:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate bid-ask spread</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;bid_ask_spread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tdask&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tdbid&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;spread_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bid_ask_spread&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tdbid&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tdask&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Compare spreads by runness</span>
+<span class="n">liquidity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;run&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;spread_pct&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;tdpubout&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="gsw-model-implied-price-analysis">
+<h3>5. GSW Model-Implied Price Analysis<a class="headerlink" href="#gsw-model-implied-price-analysis" title="Link to this heading">#</a></h3>
+<p>Compare market prices against the yield-curve-implied fair value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter to priceable bonds with GSW prices</span>
+<span class="n">df_priced</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gsw_price_dirty&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Price error: market vs model</span>
+<span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;price_error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;price_dirty&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;gsw_price_dirty&#39;</span><span class="p">]</span>
+<span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;price_error_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;price_error&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;price_dirty&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Yield spread: market YTM vs GSW-implied YTM</span>
+<span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;yield_spread&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;tdyld&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_priced</span><span class="p">[</span><span class="s1">&#39;gsw_ytm&#39;</span><span class="p">]</span>
+
+<span class="c1"># Analyze cheapness/richness by runness</span>
+<span class="n">cheapness</span> <span class="o">=</span> <span class="n">df_priced</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;run&#39;</span><span class="p">)[</span><span class="s1">&#39;price_error_pct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="term-structure-analysis">
+<h3>6. Term Structure Analysis<a class="headerlink" href="#term-structure-analysis" title="Link to this heading">#</a></h3>
+<p>Build yield curves for on-the-run securities:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># On-the-run yield curve for a specific date</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2023-12-31&#39;</span>
+<span class="n">otr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;caldt&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">otr</span> <span class="o">=</span> <span class="n">otr</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;years_to_maturity&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot yield curve</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">otr</span><span class="p">[</span><span class="s1">&#39;years_to_maturity&#39;</span><span class="p">],</span> <span class="n">otr</span><span class="p">[</span><span class="s1">&#39;tdyld&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years to Maturity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Yield (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;On-the-Run Treasury Yield Curve: </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="comparison-with-treasury-auction-with-runness">
+<h2>Comparison with treasury_auction_with_runness<a class="headerlink" href="#comparison-with-treasury-auction-with-runness" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>CRSP_TFZ_with_runness</p></th>
+<th class="head"><p>treasury_auction_with_runness</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Data Lag</strong></p></td>
+<td><p>Weeks/months</p></td>
+<td><p>Minimal (hours/days)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Update Frequency</strong></p></td>
+<td><p>Periodic CRSP updates</p></td>
+<td><p>Very frequent</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Historical Depth</strong></p></td>
+<td><p>1970-present (daily)</p></td>
+<td><p>Auction dates only</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Price Data</strong></p></td>
+<td><p>Daily bid/ask/yields</p></td>
+<td><p>Auction prices only</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Returns</strong></p></td>
+<td><p>Daily returns</p></td>
+<td><p>Not included</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Duration</strong></p></td>
+<td><p>Macaulay duration</p></td>
+<td><p>Not included</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Auction Statistics</strong></p></td>
+<td><p>Not included</p></td>
+<td><p>Comprehensive</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SOMA Data</strong></p></td>
+<td><p>Not included</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Best For</strong></p></td>
+<td><p>Historical analysis, returns, term structure</p></td>
+<td><p>Current market, auction research</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-quality-notes">
+<h2>Data Quality Notes<a class="headerlink" href="#data-quality-notes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Missing Prices</strong>: When tdbid or tdask are 0, tdyld is set to -99</p></li>
+<li><p><strong>Pre-CUSIP Era</strong>: Securities maturing before 1968 have CUSIP = “OXX”</p></li>
+<li><p><strong>Callable Securities</strong>: All securities in current dataset are non-callable (post-1970 issues)</p></li>
+<li><p><strong>Runness Coverage</strong>: Securities without auction data match are assigned run=0</p></li>
+<li><p><strong>TIPS</strong>: Inflation-adjusted securities (itype 11 or 12) have special handling for duration (-99 for missing)</p></li>
+</ol>
+</section>
+<section id="loading-the-data">
+<h2>Loading the Data<a class="headerlink" href="#loading-the-data" title="Link to this heading">#</a></h2>
+<section id="using-the-helper-function">
+<h3>Using the helper function:<a class="headerlink" href="#using-the-helper-function" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">src.pull_CRSP_treasury</span> <span class="kn">import</span> <span class="n">load_CRSP_treasury_consolidated</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_CRSP_treasury_consolidated</span><span class="p">(</span><span class="n">with_runness</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="direct-loading">
+<h3>Direct loading:<a class="headerlink" href="#direct-loading" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">chartbook</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">chartbook</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_project_root</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;_data&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;CRSP_TFZ_with_runness.parquet&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="loading-without-runness-for-comparison">
+<h3>Loading without runness (for comparison):<a class="headerlink" href="#loading-without-runness-for-comparison" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">src.pull_CRSP_treasury</span> <span class="kn">import</span> <span class="n">load_CRSP_treasury_consolidated</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">load_CRSP_treasury_consolidated</span><span class="p">(</span><span class="n">with_runness</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="column-summary-table">
+<h2>Column Summary Table<a class="headerlink" href="#column-summary-table" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>kytreasno</p></td>
+<td><p>Float64</p></td>
+<td><p>Treasury record identifier</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>kycrspid</p></td>
+<td><p>string</p></td>
+<td><p>CRSP composite ID</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tcusip</p></td>
+<td><p>object</p></td>
+<td><p>CUSIP identifier</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>caldt</p></td>
+<td><p>datetime64</p></td>
+<td><p>Quotation date</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tdatdt</p></td>
+<td><p>datetime64</p></td>
+<td><p>Date dated by Treasury</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tmatdt</p></td>
+<td><p>datetime64</p></td>
+<td><p>Maturity date</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tfcaldt</p></td>
+<td><p>datetime64</p></td>
+<td><p>First callable date</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tdbid</p></td>
+<td><p>Float64</p></td>
+<td><p>Daily bid price</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tdask</p></td>
+<td><p>Float64</p></td>
+<td><p>Daily ask price</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tdaccint</p></td>
+<td><p>Float64</p></td>
+<td><p>Accrued interest</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tdyld</p></td>
+<td><p>Float64</p></td>
+<td><p>Yield to maturity</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tdpubout</p></td>
+<td><p>Float64</p></td>
+<td><p>Publicly held outstanding</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tdtotout</p></td>
+<td><p>Float64</p></td>
+<td><p>Total outstanding</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tdpdint</p></td>
+<td><p>Float64</p></td>
+<td><p>Paid interest</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>tcouprt</p></td>
+<td><p>Float64</p></td>
+<td><p>Coupon rate</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>itype</p></td>
+<td><p>Float64</p></td>
+<td><p>Issue type code</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>original_maturity</p></td>
+<td><p>Float64</p></td>
+<td><p>Original maturity (years)</p></td>
+<td><p>Calculated</p></td>
+</tr>
+<tr class="row-odd"><td><p>years_to_maturity</p></td>
+<td><p>Float64</p></td>
+<td><p>Years to maturity</p></td>
+<td><p>Calculated</p></td>
+</tr>
+<tr class="row-even"><td><p>tdduratn</p></td>
+<td><p>Float64</p></td>
+<td><p>Macaulay’s duration</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-odd"><td><p>tdretnua</p></td>
+<td><p>Float64</p></td>
+<td><p>Daily unadjusted return</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>days_to_maturity</p></td>
+<td><p>int64</p></td>
+<td><p>Days to maturity</p></td>
+<td><p>Calculated</p></td>
+</tr>
+<tr class="row-odd"><td><p>callable</p></td>
+<td><p>bool</p></td>
+<td><p>Callable flag</p></td>
+<td><p>CRSP</p></td>
+</tr>
+<tr class="row-even"><td><p>price_dirty</p></td>
+<td><p>Float64</p></td>
+<td><p>Full price (clean + accrued)</p></td>
+<td><p>Calculated</p></td>
+</tr>
+<tr class="row-odd"><td><p>gsw_price_dirty</p></td>
+<td><p>Float64</p></td>
+<td><p>GSW model-implied dirty price</p></td>
+<td><p>Fed + Calculated</p></td>
+</tr>
+<tr class="row-even"><td><p>gsw_price_clean</p></td>
+<td><p>Float64</p></td>
+<td><p>GSW model-implied clean price</p></td>
+<td><p>Fed + Calculated</p></td>
+</tr>
+<tr class="row-odd"><td><p>gsw_ytm</p></td>
+<td><p>Float64</p></td>
+<td><p>GSW model-implied yield to maturity</p></td>
+<td><p>Fed + Calculated</p></td>
+</tr>
+<tr class="row-even"><td><p>run</p></td>
+<td><p>int64</p></td>
+<td><p>Runness indicator</p></td>
+<td><p>Auction data</p></td>
+</tr>
+<tr class="row-odd"><td><p>auction_term</p></td>
+<td><p>object</p></td>
+<td><p>Standard auction term</p></td>
+<td><p>Auction data</p></td>
+</tr>
+<tr class="row-even"><td><p>auction_type</p></td>
+<td><p>object</p></td>
+<td><p>Auction security type</p></td>
+<td><p>Auction data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="dataset-statistics">
+<h2>Dataset Statistics<a class="headerlink" href="#dataset-statistics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Total Observations</strong>: 2,508,915</p></li>
+<li><p><strong>Date Range</strong>: 1970-01-02 to 2025-09-30</p></li>
+<li><p><strong>Securities</strong>: Notes (75%) and Bonds (25%)</p></li>
+<li><p><strong>All securities are non-callable</strong> (post-1970 data)</p></li>
+<li><p><strong>Columns</strong>: 29</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>CRSP Treasury Database Guide: <a class="reference external" href="https://www.crsp.org/products/documentation/crsp-treasury">https://www.crsp.org/products/documentation/crsp-treasury</a></p></li>
+<li><p>TreasuryDirect API: <a class="reference external" href="https://treasurydirect.gov/TA_WS/securities/jqsearch">https://treasurydirect.gov/TA_WS/securities/jqsearch</a></p></li>
+<li><p>Runness calculation methodology: See <a class="reference internal" href="#../src/calc_treasury_run_status.py"><span class="xref myst">src/calc_treasury_run_status.py</span></a></p></li>
+<li><p>Merge methodology: See <a class="reference internal" href="#../src/merge_crsp_with_runness.py"><span class="xref myst">src/merge_crsp_with_runness.py</span></a></p></li>
+<li><p>Macaulay, F.R. (1938). “Some Theoretical Problems of Interest Rates, Bond Yields and Stock Prices in the United States Since 1856.” National Bureau of Economic Research, pp. 44-53.</p></li>
+<li><p>Gürkaynak, Refet S., Brian Sack, and Jonathan H. Wright. “The US Treasury yield curve: 1961 to the present.” Journal of Monetary Economics 54, no. 8 (2007): 2291-2304.</p></li>
+<li><p>GSW pricing methodology: See <a class="reference internal" href="#../src/calc_gsw_prices.py"><span class="xref myst">src/calc_gsw_prices.py</span></a></p></li>
+<li><p>Fed yield curve parameters: <a class="reference external" href="https://www.federalreserve.gov/data/yield-curve-tables/feds200628.csv">https://www.federalreserve.gov/data/yield-curve-tables/feds200628.csv</a></p></li>
+</ul>
+</section>
+<section id="related-datasets">
+<h2>Related Datasets<a class="headerlink" href="#related-datasets" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>treasury_auction_with_runness</strong>: For current market data with comprehensive auction statistics</p></li>
+<li><p><strong>CRSP_TFZ_consolidated</strong>: Same data without runness information</p></li>
+<li><p><strong>treasuries_with_run_status</strong>: Pure runness calculations by date, CUSIP, term, and type</p></li>
+</ul>
+</section>
+<section id="dataframe-glimpse">
+<h2>DataFrame Glimpse<a class="headerlink" href="#dataframe-glimpse" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Rows: 2530592
+Columns: 29
+$ kytreasno                  &lt;f64&gt; 200675.0
+$ kycrspid                   &lt;str&gt; &#39;19700815.104000&#39;
+$ tcusip                     &lt;str&gt; &#39;912810AG&#39;
+$ caldt             &lt;datetime[ns]&gt; 1970-01-02 00:00:00
+$ tdatdt            &lt;datetime[ns]&gt; 1963-06-20 00:00:00
+$ tmatdt            &lt;datetime[ns]&gt; 1970-08-15 00:00:00
+$ tfcaldt           &lt;datetime[ns]&gt; 1970-01-01 00:00:00
+$ tdbid                      &lt;f64&gt; 97.34375
+$ tdask                      &lt;f64&gt; 97.46875
+$ tdaccint                   &lt;f64&gt; 1.5217391304348
+$ tdyld                      &lt;f64&gt; 0.0002257801889589
+$ tdpubout                   &lt;f64&gt; 3667.0
+$ tdtotout                   &lt;f64&gt; 4129.0
+$ tdpdint                    &lt;f64&gt; 0.0
+$ tcouprt                    &lt;f64&gt; 4.0
+$ itype                      &lt;f64&gt; 1.0
+$ original_maturity          &lt;f64&gt; 7.0
+$ years_to_maturity          &lt;f64&gt; 1.0
+$ tdduratn                   &lt;f64&gt; 221.37694468124
+$ tdretnua                   &lt;f64&gt; 0.00085224539168923
+$ days_to_maturity           &lt;i64&gt; 225
+$ callable                  &lt;bool&gt; False
+$ price_dirty                &lt;f64&gt; 98.9279891304348
+$ run                        &lt;i64&gt; 0
+$ auction_term               &lt;str&gt; null
+$ auction_type               &lt;str&gt; null
+$ gsw_price_dirty            &lt;f64&gt; null
+$ gsw_price_clean            &lt;f64&gt; null
+$ gsw_ytm                    &lt;f64&gt; null
+
+
+</pre></div>
+</div>
+</section>
+<section id="dataframe-manifest">
+<h2>Dataframe Manifest<a class="headerlink" href="#dataframe-manifest" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dataframe Name</p></th>
+<th class="head"><p>crsp_treasury_daily</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dataframe ID</p></td>
+<td><p><a class="reference internal" href="#../dataframes/crsp_treasury/crsp_treasury_daily.md"><span class="xref myst">crsp_treasury_daily</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Sources</p></td>
+<td><p>crsp, treasury_auction_stats, fed_yield_curve</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Providers</p></td>
+<td><p>WRDS, TreasuryDirect, Federal Reserve</p></td>
+</tr>
+<tr class="row-odd"><td><p>Links to Providers</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Topic Tags</p></td>
+<td><p>Treasuries</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type of Data Access</p></td>
+<td><p>WRDS,Web API,Federal Reserve CSV</p></td>
+</tr>
+<tr class="row-even"><td><p>How is data pulled?</p></td>
+<td><p>CRSP via WRDS API, runness from TreasuryDirect auction data merged by CUSIP and date, GSW model-implied prices from Fed Svensson parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data available up to (min)</p></td>
+<td><p>N/A (large file)</p></td>
+</tr>
+<tr class="row-even"><td><p>Data available up to (max)</p></td>
+<td><p>N/A (large file)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dataframe Path</p></td>
+<td><p>/Users/jbejarano/GitRepositories/ftsfr_repos/crsp_treasury/_data/crsp_treasury_daily.parquet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Linked Charts:</strong></p>
+<ul class="simple">
+<li><p>None</p></li>
+</ul>
+</section>
+<section id="pipeline-manifest">
+<h2>Pipeline Manifest<a class="headerlink" href="#pipeline-manifest" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pipeline Name</p></th>
+<th class="head"><p>CRSP Treasury</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pipeline ID</p></td>
+<td><p><a class="reference internal" href="../../../index.html"><span class="std std-doc">crsp_treasury</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lead Pipeline Developer</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-even"><td><p>Contributors</p></td>
+<td><p>Jeremiah Bejarano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Repo URL</p></td>
+<td><p><a class="github reference external" href="https://github.com/ftsfr/crsp_treasury">ftsfr/crsp_treasury</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Pipeline Web Page</p></td>
+<td><p><a href="file:///Users/jbejarano/GitRepositories/ftsfr_repos/crsp_treasury/docs/index.html">Pipeline Web Page</p></td>
+</tr>
+<tr class="row-odd"><td><p>Date of Last Code Update</p></td>
+<td><p>2026-07-09 20:46:16</p></td>
+</tr>
+<tr class="row-even"><td><p>OS Compatibility</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linked Dataframes</p></td>
+<td><p><a class="reference internal" href="#"><span class="std std-doc">crsp_treasury:crsp_treasury_daily</span></a><br>  <a class="reference internal" href="treasury_auctions.html"><span class="std std-doc">crsp_treasury:treasury_auctions</span></a><br>  <a class="reference internal" href="ftsfr_treas_bond_portfolio_returns.html"><span class="std std-doc">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></a><br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../charts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chart List</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ftsfr_treas_bond_portfolio_returns.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dataframe: <code class="docutils literal notranslate"><span class="pre">crsp_treasury:ftsfr_treas_bond_portfolio_returns</span></code> - ftsfr_treas_bond_portfolio_returns</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources">Data Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-note-on-data-lag">Important Note on Data Lag</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-columns">Main Columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifiers">Identifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kytreasno">kytreasno</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kycrspid">kycrspid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tcusip">tcusip</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-dates">Key Dates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caldt">caldt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdatdt">tdatdt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tmatdt">tmatdt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tfcaldt">tfcaldt</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prices-and-yields">Prices and Yields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdbid">tdbid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdask">tdask</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#price-dirty">price_dirty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdaccint">tdaccint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdyld">tdyld</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-model-implied-values">GSW Model-Implied Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-price-dirty">gsw_price_dirty</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-price-clean">gsw_price_clean</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-ytm">gsw_ytm</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-characteristics">Security Characteristics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tcouprt">tcouprt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#itype">itype</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#callable">callable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#original-maturity">original_maturity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#years-to-maturity">years_to_maturity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#days-to-maturity">days_to_maturity</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-and-return-measures">Risk and Return Measures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdduratn">tdduratn</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdretnua">tdretnua</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outstanding-amounts">Outstanding Amounts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdpubout">tdpubout</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdtotout">tdtotout</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tdpdint">tdpdint</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runness-and-auction-data">Runness and Auction Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run">run</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-term">auction_term</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#auction-type">auction_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-on-the-run-vs-off-the-run-analysis">1. Historical On-the-Run vs Off-the-Run Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#treasury-returns-calculation">2. Treasury Returns Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duration-analysis-by-runness">3. Duration Analysis by Runness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#price-discovery-and-liquidity">4. Price Discovery and Liquidity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gsw-model-implied-price-analysis">5. GSW Model-Implied Price Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#term-structure-analysis">6. Term Structure Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-treasury-auction-with-runness">Comparison with treasury_auction_with_runness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-notes">Data Quality Notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-data">Loading the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-helper-function">Using the helper function:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-loading">Direct loading:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-without-runness-for-comparison">Loading without runness (for comparison):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-summary-table">Column Summary Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-statistics">Dataset Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-datasets">Related Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-glimpse">DataFrame Glimpse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-manifest">Dataframe Manifest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-manifest">Pipeline Manifest</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeremy Bejarano
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jeremy Bejarano.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
