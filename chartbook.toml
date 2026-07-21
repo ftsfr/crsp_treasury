@@ -1,161 +1,132 @@
-[config]
-type = "pipeline"
-chartbook_format_version = "0.0.2"
-
-[site]
-title = "CRSP Treasury"
-author = "Jeremy Bejarano"
+[project]
+name = "CRSP Treasury"
+description = "Treasury Securities Data from CRSP"
+contributors = [
+    "Jeremiah Bejarano",
+]
+repo_url = "https://github.com/ftsfr/crsp_treasury"
 copyright = "2025"
-logo_path = ""
-favicon_path = ""
-
-[pipeline]
-id = "crsp_treasury"
-pipeline_name = "CRSP Treasury"
-pipeline_description = "Treasury Securities Data from CRSP"
-lead_pipeline_developer = "Jeremiah Bejarano"
-contributors = ["Jeremiah Bejarano"]
-runs_on = "Windows/Linux/MacOS"
-git_repo_URL = "https://github.com/ftsfr/crsp_treasury"
-README_file_path = "./README.md"
-
-[notebooks]
+os_compatibility = [
+    "Windows",
+    "Linux",
+    "MacOS",
+]
 
 [notebooks.summary_treasury_bond_returns_ipynb]
-notebook_name = "summary_treasury_bond_returns_ipynb"
-notebook_description = "summary_treasury_bond_returns_ipynb"
-notebook_path = "_output/_notebook_build/summary_treasury_bond_returns_ipynb.ipynb"
-is_publishable = true
-
-[charts]
-
-[charts.treasury_returns_replication]
-chart_name = "Treasury Bond Portfolio Returns"
-short_description_chart = "Treasury bond portfolio returns from CRSP data"
-dataframe_id = "ftsfr_treas_bond_portfolio_returns"
-path_to_html_chart = "./_output/treasury_returns_replication.html"
-path_to_excel_chart = ""
-topic_tags = ["treasury", "bonds", "returns", "replication"]
-past_publications = [
-    "He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes",
-    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
-]
-chart_docs_str = """
-## Treasury Bond Portfolio Returns
-
-Monthly Treasury bond returns from CRSP, grouped by maturity bucket.
-
-These portfolios replicate the maturity-sorted U.S. Treasury bond test
-portfolios (US_bonds_01-US_bonds_10) of He, Kelly, and Manela (2017),
-"Intermediary Asset Pricing: New Evidence from Many Asset Classes."
-The replication is verified against the published HKM data by
-`src/test_hkm_replication.py`.
-
-### Maturity Groups
-
-10 groups spanning 0-5 years in 6-month intervals.
-
-### Data Source
-
-CRSP US Treasury Database via WRDS
-"""
-
-[charts.treasury_cumulative_returns]
-chart_name = "Treasury Bond Portfolio Cumulative Returns"
-short_description_chart = "Cumulative returns showing growth of $1 invested in Treasury bond portfolios"
-dataframe_id = "ftsfr_treas_bond_portfolio_returns"
-path_to_html_chart = "./_output/treasury_cumulative_returns.html"
-path_to_excel_chart = ""
-topic_tags = ["treasury", "bonds", "cumulative returns", "replication"]
-past_publications = [
-    "He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes",
-    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
-]
-chart_docs_str = """
-## Treasury Bond Portfolio Cumulative Returns
-
-Cumulative returns showing growth of $1 invested in Treasury bond portfolios from CRSP, grouped by maturity bucket.
-
-The underlying portfolios replicate the maturity-sorted Treasury test
-portfolios of He, Kelly, and Manela (2017).
-
-### Maturity Groups
-
-10 groups spanning 0-5 years in 6-month intervals.
-
-### Calculation
-
-Cumulative return = Product of (1 + monthly return) over time
-"""
-
-[dataframes]
+name = "summary_treasury_bond_returns_ipynb"
+description = "summary_treasury_bond_returns_ipynb"
+path = "_output/_notebook_build/summary_treasury_bond_returns_ipynb.ipynb"
+publishable = true
 
 [dataframes.crsp_treasury_daily]
-dataframe_name = "crsp_treasury_daily"
-short_description_df = "CRSP Treasury data with auction-based runness calculations and GSW model-implied prices"
-data_sources = ["crsp", "treasury_auction_stats", "fed_yield_curve"]
-data_providers = ["WRDS", "TreasuryDirect", "Federal Reserve"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = [""]
-topic_tags = ["treasuries"]
-type_of_data_access = ["WRDS", "Web API", "Federal Reserve CSV"]
-data_license = "Yes"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "Yes"
-how_is_pulled = "CRSP via WRDS API, runness from TreasuryDirect auction data merged by CUSIP and date, GSW model-implied prices from Fed Svensson parameters"
-path_to_parquet_data = "./_data/crsp_treasury_daily.parquet"
-path_to_excel_data = ""
+name = "crsp_treasury_daily"
+description = "CRSP Treasury data with auction-based runness calculations and GSW model-implied prices"
+sources = [
+    "crsp",
+    "treasury_auction_stats",
+    "fed_yield_curve",
+]
+providers = [
+    "WRDS",
+    "TreasuryDirect",
+    "Federal Reserve",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "",
+]
+tags = [
+    "treasuries",
+]
+access_types = [
+    "WRDS",
+    "Web API",
+    "Federal Reserve CSV",
+]
+license = "Yes"
+restrictions = "Yes"
+pull_method = "CRSP via WRDS API, runness from TreasuryDirect auction data merged by CUSIP and date, GSW model-implied prices from Fed Svensson parameters"
+path = "./_data/crsp_treasury_daily.parquet"
 date_col = "caldt"
-dataframe_docs_path = "./docs_src/crsp_treasury_daily.md"
+docs_path = "./docs_src/crsp_treasury_daily.md"
 
 [dataframes.treasury_auctions]
-dataframe_name = "treasury_auctions"
-short_description_df = "Treasury auction data with runness calculations (frequently updated, no CRSP lag)"
-data_sources = ["treasury_auction_stats"]
-data_providers = ["TreasuryDirect"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://treasurydirect.gov/TA_WS/securities/jqsearch"]
-topic_tags = ["treasuries", "auctions"]
-type_of_data_access = ["Web API"]
-data_license = "Public Domain"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "TreasuryDirect Web API, runness calculated from auction data and merged by CUSIP and auction date"
-path_to_parquet_data = "./_data/treasury_auctions.parquet"
-path_to_excel_data = ""
+name = "treasury_auctions"
+description = "Treasury auction data with runness calculations (frequently updated, no CRSP lag)"
+sources = [
+    "treasury_auction_stats",
+]
+providers = [
+    "TreasuryDirect",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://treasurydirect.gov/TA_WS/securities/jqsearch",
+]
+tags = [
+    "treasuries",
+    "auctions",
+]
+access_types = [
+    "Web API",
+]
+license = "Public Domain"
+restrictions = "No"
+pull_method = "TreasuryDirect Web API, runness calculated from auction data and merged by CUSIP and auction date"
+path = "./_data/treasury_auctions.parquet"
 date_col = "auctionDate"
-dataframe_docs_path = "./docs_src/treasury_auctions.md"
+docs_path = "./docs_src/treasury_auctions.md"
 
 [dataframes.ftsfr_treas_bond_portfolio_returns]
-dataframe_name = "ftsfr_treas_bond_portfolio_returns"
-short_description_df = "Treasury bond portfolio returns grouped by maturity buckets"
-data_sources = ["CRSP Treasury Database"]
-data_providers = ["WRDS"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://wrds-www.wharton.upenn.edu/"]
-topic_tags = ["treasury", "bonds", "portfolios", "returns"]
-type_of_data_access = ["WRDS Subscription"]
-data_license = "WRDS"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Pulled from WRDS CRSP Treasury Database"
-path_to_parquet_data = "./_data/ftsfr_treas_bond_portfolio_returns.parquet"
-path_to_excel_data = ""
+name = "ftsfr_treas_bond_portfolio_returns"
+description = "Treasury bond portfolio returns grouped by maturity buckets"
+sources = [
+    "CRSP Treasury Database",
+]
+providers = [
+    "WRDS",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://wrds-www.wharton.upenn.edu/",
+]
+tags = [
+    "treasury",
+    "bonds",
+    "portfolios",
+    "returns",
+]
+access_types = [
+    "WRDS Subscription",
+]
+license = "WRDS"
+restrictions = "No"
+pull_method = "Pulled from WRDS CRSP Treasury Database"
+path = "./_data/ftsfr_treas_bond_portfolio_returns.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## Treasury Bond Portfolio Returns
 
 This dataset contains portfolio returns grouped by maturity buckets.
 
 It replicates the maturity-sorted U.S. Treasury bond test portfolios
-(US_bonds_01-US_bonds_10) of He, Kelly, and Manela (2017), "Intermediary
-Asset Pricing: New Evidence from Many Asset Classes," Journal of Financial
+(US_bonds_01-US_bonds_10) of He, Kelly, and Manela (2017), \"Intermediary
+Asset Pricing: New Evidence from Many Asset Classes,\" Journal of Financial
 Economics. The replication is verified month-by-month against the published
 HKM data by `src/test_hkm_replication.py` (correlations above 0.99 per
 portfolio in the overlapping sample).
@@ -186,4 +157,71 @@ portfolio in the overlapping sample).
 ### Data Source
 
 CRSP US Treasury Database via WRDS
+"""
+
+[charts.treasury_returns_replication]
+name = "Treasury Bond Portfolio Returns"
+description = "Treasury bond portfolio returns from CRSP data"
+dataframe = "ftsfr_treas_bond_portfolio_returns"
+path = "./_output/treasury_returns_replication.html"
+tags = [
+    "treasury",
+    "bonds",
+    "returns",
+    "replication",
+]
+publications = [
+    "He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes",
+    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
+]
+docs = """
+## Treasury Bond Portfolio Returns
+
+Monthly Treasury bond returns from CRSP, grouped by maturity bucket.
+
+These portfolios replicate the maturity-sorted U.S. Treasury bond test
+portfolios (US_bonds_01-US_bonds_10) of He, Kelly, and Manela (2017),
+\"Intermediary Asset Pricing: New Evidence from Many Asset Classes.\"
+The replication is verified against the published HKM data by
+`src/test_hkm_replication.py`.
+
+### Maturity Groups
+
+10 groups spanning 0-5 years in 6-month intervals.
+
+### Data Source
+
+CRSP US Treasury Database via WRDS
+"""
+
+[charts.treasury_cumulative_returns]
+name = "Treasury Bond Portfolio Cumulative Returns"
+description = "Cumulative returns showing growth of $1 invested in Treasury bond portfolios"
+dataframe = "ftsfr_treas_bond_portfolio_returns"
+path = "./_output/treasury_cumulative_returns.html"
+tags = [
+    "treasury",
+    "bonds",
+    "cumulative returns",
+    "replication",
+]
+publications = [
+    "He, Kelly, and Manela (2017) - Intermediary Asset Pricing: New Evidence from Many Asset Classes",
+    "Fama and French (1993) - Common risk factors in the returns on stocks and bonds",
+]
+docs = """
+## Treasury Bond Portfolio Cumulative Returns
+
+Cumulative returns showing growth of $1 invested in Treasury bond portfolios from CRSP, grouped by maturity bucket.
+
+The underlying portfolios replicate the maturity-sorted Treasury test
+portfolios of He, Kelly, and Manela (2017).
+
+### Maturity Groups
+
+10 groups spanning 0-5 years in 6-month intervals.
+
+### Calculation
+
+Cumulative return = Product of (1 + monthly return) over time
 """
