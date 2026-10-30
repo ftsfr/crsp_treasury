@@ -11,6 +11,10 @@ os_compatibility = [
     "Linux",
     "MacOS",
 ]
+requires_chartbook = ">=0.3.0"
+
+[scripts]
+build = "doit"
 
 [notebooks.summary_treasury_bond_returns_ipynb]
 name = "summary_treasury_bond_returns_ipynb"
