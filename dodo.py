@@ -308,7 +308,7 @@ def task_generate_pipeline_site():
     return {
         "actions": [
             # "chartbook create-data-glimpses",
-            "chartbook docs generate -f",
+            "chartbook docs build -f",
         ],
         "targets": ["docs/index.html"],
         "file_dep": [
